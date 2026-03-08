@@ -1,6 +1,9 @@
-import { Link, useLocation } from "react-router-dom";
-import { Menu, X } from "lucide-react";
+import { Link, useLocation, useNavigate } from "react-router-dom";
+import { Menu, X, LogIn, LogOut, User } from "lucide-react";
 import { useState } from "react";
+import { useAuth } from "@/contexts/AuthContext";
+import { Button } from "@/components/ui/button";
+import { toast } from "sonner";
 
 const navItems = [
   { path: "/", label: "Home" },
@@ -11,11 +14,18 @@ const navItems = [
 
 const Header = () => {
   const location = useLocation();
+  const navigate = useNavigate();
   const [mobileOpen, setMobileOpen] = useState(false);
+  const { user, signOut } = useAuth();
+
+  const handleSignOut = async () => {
+    await signOut();
+    toast.success("Signed out");
+    navigate("/");
+  };
 
   return (
     <header className="sticky top-0 z-50 border-b bg-card/80 backdrop-blur-md">
-      {/* Tricolor bar */}
       <div className="flex h-1">
         <div className="flex-1 bg-saffron" />
         <div className="flex-1 bg-card" />
@@ -29,7 +39,6 @@ const Header = () => {
           </span>
         </Link>
 
-        {/* Desktop nav */}
         <nav className="hidden md:flex items-center gap-1">
           {navItems.map((item) => (
             <Link
@@ -44,15 +53,27 @@ const Header = () => {
               {item.label}
             </Link>
           ))}
+          {user ? (
+            <div className="flex items-center gap-2 ml-2">
+              <span className="text-xs text-muted-foreground hidden lg:block">{user.email}</span>
+              <Button variant="ghost" size="sm" onClick={handleSignOut}>
+                <LogOut className="h-4 w-4 mr-1" /> Sign Out
+              </Button>
+            </div>
+          ) : (
+            <Link to="/auth">
+              <Button variant="outline" size="sm" className="ml-2">
+                <LogIn className="h-4 w-4 mr-1" /> Sign In
+              </Button>
+            </Link>
+          )}
         </nav>
 
-        {/* Mobile toggle */}
         <button className="md:hidden p-2" onClick={() => setMobileOpen(!mobileOpen)}>
           {mobileOpen ? <X className="h-5 w-5" /> : <Menu className="h-5 w-5" />}
         </button>
       </div>
 
-      {/* Mobile nav */}
       {mobileOpen && (
         <nav className="md:hidden border-t bg-card p-4 space-y-1">
           {navItems.map((item) => (
@@ -69,6 +90,15 @@ const Header = () => {
               {item.label}
             </Link>
           ))}
+          {user ? (
+            <button onClick={() => { handleSignOut(); setMobileOpen(false); }} className="block w-full text-left px-4 py-3 rounded-lg text-sm font-medium text-destructive hover:bg-muted">
+              Sign Out
+            </button>
+          ) : (
+            <Link to="/auth" onClick={() => setMobileOpen(false)} className="block px-4 py-3 rounded-lg text-sm font-medium text-primary hover:bg-muted">
+              Sign In
+            </Link>
+          )}
         </nav>
       )}
     </header>
