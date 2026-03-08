@@ -47,7 +47,7 @@ export interface InternationalFact {
   icon: string;
 }
 
-// --- Leaders ---
+// --- Leaders (Updated March 2026) ---
 export const nationalLeaders: Leader[] = [
   { title: "President of India", name: "Smt. Droupadi Murmu", since: "July 2022", icon: "🏛️" },
   { title: "Vice President", name: "Shri Jagdeep Dhankhar", since: "August 2022", icon: "🏛️" },
@@ -59,11 +59,11 @@ export const nationalLeaders: Leader[] = [
   { title: "Education Minister", name: "Shri Dharmendra Pradhan", since: "July 2021", icon: "📚" },
   { title: "Health Minister", name: "Shri J.P. Nadda", since: "June 2024", icon: "🏥" },
   { title: "Agriculture Minister", name: "Shri Shivraj Singh Chouhan", since: "June 2024", icon: "🌾" },
-  { title: "Chief Justice of India", name: "Justice Sanjiv Khanna", since: "November 2024", icon: "⚖️" },
+  { title: "Chief Justice of India", name: "Justice Surya Kant (53rd CJI)", since: "November 2025", icon: "⚖️" },
   { title: "RBI Governor", name: "Shri Sanjay Malhotra", since: "December 2024", icon: "🏦" },
 ];
 
-// --- State CMs ---
+// --- State CMs (Updated March 2026) ---
 export const stateCMs: StateCM[] = [
   { state: "Andhra Pradesh", cm: "N. Chandrababu Naidu", party: "TDP" },
   { state: "Arunachal Pradesh", cm: "Pema Khandu", party: "BJP" },
@@ -96,57 +96,60 @@ export const stateCMs: StateCM[] = [
   { state: "West Bengal", cm: "Mamata Banerjee", party: "TMC" },
 ];
 
-// --- India Global Rankings ---
+// --- India Global Rankings (Updated 2026) ---
 export const indiaRankings: IndiaRanking[] = [
-  { category: "GDP (Nominal)", rank: "5th", total: "195 countries", source: "IMF 2024", icon: "💰" },
-  { category: "GDP (PPP)", rank: "3rd", total: "195 countries", source: "World Bank", icon: "📈" },
-  { category: "Population", rank: "1st", total: "195 countries", source: "UN 2024", icon: "👥" },
+  { category: "GDP (Nominal)", rank: "4th", total: "195 countries", source: "IMF 2026", icon: "💰" },
+  { category: "GDP (PPP)", rank: "3rd", total: "195 countries", source: "World Bank 2026", icon: "📈" },
+  { category: "Population", rank: "1st", total: "195 countries", source: "UN 2026", icon: "👥" },
   { category: "Area (Land)", rank: "7th", total: "195 countries", source: "UN", icon: "🗺️" },
-  { category: "Ease of Doing Business", rank: "63rd", total: "190 countries", source: "World Bank", icon: "🏢" },
-  { category: "HDI (Human Development)", rank: "134th", total: "193 countries", source: "UNDP 2024", icon: "📊" },
-  { category: "Defence Spending", rank: "4th", total: "195 countries", source: "SIPRI 2024", icon: "🛡️" },
+  { category: "Military Strength", rank: "4th", total: "145 countries", source: "Global Firepower 2026", icon: "🛡️" },
+  { category: "HDI (Human Development)", rank: "130th", total: "193 countries", source: "UNDP 2025 Report", icon: "📊" },
+  { category: "Defence Spending", rank: "4th", total: "195 countries", source: "SIPRI 2026", icon: "🎖️" },
   { category: "Nuclear Warheads", rank: "6th", total: "9 nuclear states", source: "SIPRI", icon: "☢️" },
   { category: "Space Missions", rank: "4th", total: "Space-faring nations", source: "ISRO", icon: "🚀" },
-  { category: "IT Exports", rank: "2nd", total: "Global", source: "NASSCOM", icon: "💻" },
-  { category: "Cricket (ICC Test)", rank: "1st", total: "ICC Members", source: "ICC 2024", icon: "🏏" },
-  { category: "Solar Energy Capacity", rank: "4th", total: "Global", source: "IRENA", icon: "☀️" },
+  { category: "IT Exports", rank: "2nd", total: "Global", source: "NASSCOM 2026", icon: "💻" },
+  { category: "Cricket (ICC Test)", rank: "1st", total: "ICC Members", source: "ICC 2026", icon: "🏏" },
+  { category: "Solar Energy Capacity", rank: "4th", total: "Global", source: "IRENA 2026", icon: "☀️" },
 ];
 
-// --- International & Misc Facts ---
+// --- International & Misc Facts (Updated March 2026) ---
 export const internationalFacts: InternationalFact[] = [
-  { title: "India's GDP (Nominal)", value: "$3.94 Trillion", description: "5th largest economy, projected to be 3rd by 2027", icon: "💰" },
-  { title: "GDP Per Capita", value: "$2,730", description: "Purchasing power growing steadily", icon: "📊" },
-  { title: "Population", value: "1.44 Billion", description: "World's most populous country since 2023", icon: "👥" },
-  { title: "Forex Reserves", value: "$658 Billion", description: "Among largest in the world", icon: "🏦" },
-  { title: "UPI Transactions (2024)", value: "₹223 Lakh Crore", description: "16.6 billion transactions/month — world's #1 digital payments", icon: "📱" },
-  { title: "FDI Inflow (2024)", value: "$71 Billion", description: "Major sectors: services, IT, telecom, pharma", icon: "🌐" },
-  { title: "Exports (2024)", value: "$778 Billion", description: "Goods + services exports growing rapidly", icon: "📦" },
-  { title: "Startups", value: "1,30,000+", description: "3rd largest startup ecosystem globally, 110+ unicorns", icon: "🚀" },
-  { title: "Internet Users", value: "950 Million+", description: "2nd largest internet market after China", icon: "🌐" },
+  { title: "India's GDP (Nominal)", value: "$4.27 Trillion", description: "4th largest economy — surpassed Japan in 2025", icon: "💰" },
+  { title: "GDP Growth Rate (FY26)", value: "7.6%", description: "Real GDP growth as per MoSPI advance estimates", icon: "📈" },
+  { title: "GDP Per Capita", value: "$2,900+", description: "Rising steadily with purchasing power growth", icon: "📊" },
+  { title: "Population", value: "1.46 Billion", description: "World's most populous country since 2023", icon: "👥" },
+  { title: "Forex Reserves", value: "$728 Billion", description: "Record high as of Feb 2026 — covers 11 months imports", icon: "🏦" },
+  { title: "UPI Transactions (FY26)", value: "₹230+ Lakh Crore", description: "Record ₹28.3 lakh crore in Jan 2026 alone — world's #1 digital payments", icon: "📱" },
+  { title: "FDI Inflow (FY25)", value: "$87 Billion (Gross)", description: "Net FDI jumped 7x — largest in South Asia (UNCTAD)", icon: "🌐" },
+  { title: "Remittances", value: "$135.4 Billion", description: "World's largest remittance recipient (FY25)", icon: "💵" },
+  { title: "Exports (FY26E)", value: "$800+ Billion", description: "Goods + services exports growing steadily", icon: "📦" },
+  { title: "Startups", value: "1,40,000+", description: "3rd largest startup ecosystem globally, 115+ unicorns", icon: "🚀" },
+  { title: "Internet Users", value: "980 Million+", description: "2nd largest internet market after China", icon: "🌐" },
   { title: "Railway Network", value: "68,000+ km", description: "4th largest railway network in the world", icon: "🚂" },
-  { title: "Road Network", value: "64 Lakh km", description: "2nd largest road network globally", icon: "🛣️" },
-  { title: "UNESCO Heritage Sites", value: "42 Sites", description: "7th most World Heritage Sites globally", icon: "🏛️" },
+  { title: "Road Network", value: "64+ Lakh km", description: "2nd largest road network globally", icon: "🛣️" },
+  { title: "UNESCO Heritage Sites", value: "43 Sites", description: "7th most World Heritage Sites globally", icon: "🏛️" },
 ];
 
-// --- Budget Highlights ---
+// --- Union Budget 2026-27 Highlights ---
 export const budgetHighlights: BudgetHighlight[] = [
-  { title: "Total Budget 2025-26", amount: "₹50.65 Lakh Crore", change: "+7.4%", description: "Total expenditure estimated for Union Budget 2025-26", icon: "📊" },
-  { title: "Defence Budget", amount: "₹6.81 Lakh Crore", change: "+9.5%", description: "Allocation for defence sector including modernization", icon: "🛡️" },
-  { title: "Education Budget", amount: "₹1.28 Lakh Crore", change: "+15.8%", description: "Investment in education, skill development and research", icon: "📚" },
-  { title: "Health Budget", amount: "₹99,858 Crore", change: "+12.6%", description: "Healthcare infrastructure and wellness programmes", icon: "🏥" },
-  { title: "Agriculture Budget", amount: "₹1.37 Lakh Crore", change: "+10.2%", description: "Farm sector support including MSP and irrigation", icon: "🌾" },
-  { title: "Infrastructure", amount: "₹11.21 Lakh Crore", change: "+11.1%", description: "Capital expenditure on roads, railways, ports and airports", icon: "🏗️" },
-  { title: "Rural Development", amount: "₹2.66 Lakh Crore", change: "+8.3%", description: "MGNREGA, housing, and rural infrastructure", icon: "🏡" },
-  { title: "IT & Digital", amount: "₹21,936 Crore", change: "+24.3%", description: "Digital India, AI missions, and semiconductor development", icon: "💻" },
+  { title: "Total Budget 2026-27", amount: "₹53.47 Lakh Crore", change: "+7.7%", description: "Total expenditure for Union Budget 2026-27 over revised estimates of FY26", icon: "📊" },
+  { title: "Defence Budget", amount: "₹7.85 Lakh Crore", change: "+15.2%", description: "Highest allocation — 14.67% of total Central Govt expenditure", icon: "🛡️" },
+  { title: "Education Budget", amount: "₹1.39 Lakh Crore", change: "+8.3%", description: "Focus on AI, skilling, healthcare training and employability", icon: "📚" },
+  { title: "Health Budget", amount: "₹1.06 Lakh Crore", change: "+12.4%", description: "Healthcare infrastructure, wellness and medical training", icon: "🏥" },
+  { title: "Agriculture Budget", amount: "₹1.47 Lakh Crore", change: "+10.8%", description: "Farm sector support including MSP, irrigation, crop insurance", icon: "🌾" },
+  { title: "Infrastructure (Capex)", amount: "₹11.21 Lakh Crore", change: "+10.1%", description: "Capital expenditure on roads, railways, ports, airports", icon: "🏗️" },
+  { title: "Rural Development", amount: "₹2.72 Lakh Crore", change: "+9.1%", description: "MGNREGA, housing, and rural infrastructure", icon: "🏡" },
+  { title: "IT & Digital India", amount: "₹24,220 Crore", change: "+22.5%", description: "Digital India, AI missions, semiconductor development", icon: "💻" },
 ];
 
 export const economicIndicators: EconomicIndicator[] = [
-  { name: "GDP Growth Rate", value: "6.5%", trend: "up", description: "Estimated real GDP growth for FY 2025-26" },
-  { name: "Fiscal Deficit", value: "4.4%", trend: "down", description: "As percentage of GDP, targeting consolidation" },
-  { name: "Inflation (CPI)", value: "4.5%", trend: "stable", description: "Consumer Price Index based inflation rate" },
-  { name: "Foreign Exchange Reserves", value: "$658 Billion", trend: "up", description: "Forex reserves providing import cover" },
-  { name: "Tax Revenue", value: "₹38.4 Lakh Crore", trend: "up", description: "Gross tax collection target for FY26" },
-  { name: "New Income Tax Slabs", value: "₹12 Lakh Exempt", trend: "up", description: "No income tax for income up to ₹12 lakh under new regime" },
+  { name: "GDP Growth Rate (FY27E)", value: "6.8–7.2%", trend: "up", description: "Projected real GDP growth for FY 2026-27 (Economic Survey)" },
+  { name: "Nominal GDP Growth (FY27)", value: "10%", trend: "up", description: "Nominal GDP growth budgeted for FY 2026-27" },
+  { name: "Fiscal Deficit (FY27)", value: "4.4%", trend: "down", description: "As percentage of GDP — continued fiscal consolidation path" },
+  { name: "Inflation (CPI)", value: "4.2%", trend: "stable", description: "Consumer Price Index based inflation rate trending lower" },
+  { name: "Foreign Exchange Reserves", value: "$728 Billion", trend: "up", description: "Record high forex reserves — 11 months import cover" },
+  { name: "Tax Revenue (FY27)", value: "₹42.7 Lakh Crore", trend: "up", description: "Gross tax collection target for FY27 — 10.8% growth" },
+  { name: "New Income Tax Slabs", value: "₹12 Lakh Exempt", trend: "up", description: "No income tax for income up to ₹12 lakh under new regime (Budget 2025-26)" },
 ];
 
 export const ministryLinks: MinistryLink[] = [
