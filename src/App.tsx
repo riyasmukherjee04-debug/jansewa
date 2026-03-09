@@ -26,14 +26,14 @@ const App = () => (
         <Sonner />
         <BrowserRouter>
           <Routes>
-            <Route path="/" element={<Index />} />
-            <Route path="/schemes" element={<Schemes />} />
-            <Route path="/scheme/:id" element={<SchemeDetailPage />} />
-            <Route path="/government-info" element={<GovernmentInfo />} />
-            <Route path="/about" element={<About />} />
             <Route path="/auth" element={<Auth />} />
             <Route path="/forgot-password" element={<ForgotPassword />} />
             <Route path="/reset-password" element={<ResetPassword />} />
+            <Route path="/" element={<ProtectedRoute><Index /></ProtectedRoute>} />
+            <Route path="/schemes" element={<ProtectedRoute><Schemes /></ProtectedRoute>} />
+            <Route path="/scheme/:id" element={<ProtectedRoute><SchemeDetailPage /></ProtectedRoute>} />
+            <Route path="/government-info" element={<ProtectedRoute><GovernmentInfo /></ProtectedRoute>} />
+            <Route path="/about" element={<ProtectedRoute><About /></ProtectedRoute>} />
             <Route path="*" element={<NotFound />} />
           </Routes>
           <Chatbot />
