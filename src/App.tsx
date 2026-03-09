@@ -4,6 +4,7 @@ import { TooltipProvider } from "@/components/ui/tooltip";
 import { QueryClient, QueryClientProvider } from "@tanstack/react-query";
 import { BrowserRouter, Routes, Route } from "react-router-dom";
 import { AuthProvider } from "@/contexts/AuthContext";
+import ProtectedRoute from "./components/ProtectedRoute";
 import Index from "./pages/Index";
 import Schemes from "./pages/Schemes";
 import SchemeDetailPage from "./pages/SchemeDetailPage";
@@ -25,14 +26,14 @@ const App = () => (
         <Sonner />
         <BrowserRouter>
           <Routes>
-            <Route path="/" element={<Index />} />
-            <Route path="/schemes" element={<Schemes />} />
-            <Route path="/scheme/:id" element={<SchemeDetailPage />} />
-            <Route path="/government-info" element={<GovernmentInfo />} />
-            <Route path="/about" element={<About />} />
             <Route path="/auth" element={<Auth />} />
             <Route path="/forgot-password" element={<ForgotPassword />} />
             <Route path="/reset-password" element={<ResetPassword />} />
+            <Route path="/" element={<ProtectedRoute><Index /></ProtectedRoute>} />
+            <Route path="/schemes" element={<ProtectedRoute><Schemes /></ProtectedRoute>} />
+            <Route path="/scheme/:id" element={<ProtectedRoute><SchemeDetailPage /></ProtectedRoute>} />
+            <Route path="/government-info" element={<ProtectedRoute><GovernmentInfo /></ProtectedRoute>} />
+            <Route path="/about" element={<ProtectedRoute><About /></ProtectedRoute>} />
             <Route path="*" element={<NotFound />} />
           </Routes>
           <Chatbot />
