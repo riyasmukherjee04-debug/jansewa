@@ -42,10 +42,25 @@ function calculateMatch(profile: UserProfile, scheme: Scheme): { score: number; 
     else { score += 20; reasons.push("Income within limit"); }
   }
 
-  // Occupation check
+  // Occupation check — STRICT: if scheme targets specific occupations, user must match
   if (e.occupations && e.occupations.length > 0) {
-    if (!e.occupations.includes(profile.occupation)) disqualified = true;
-    else { score += 25; reasons.push("Occupation matches"); }
+    if (!e.occupations.includes(profile.occupation)) {
+      disqualified = true;
+    } else {
+      score += 25;
+      reasons.push("Occupation matches");
+    }
+  }
+
+  // Reverse occupation relevance — if scheme has NO occupation filter but targets
+  // a domain clearly irrelevant to the user's occupation, reduce relevance
+  if (!e.occupations || e.occupations.length === 0) {
+    // Agriculture schemes should only show to farmers
+    if (scheme.category === "agriculture" && profile.occupation !== "farmer") {
+      disqualified = true;
+    }
+    // Women-specific schemes should only show to females (unless no gender filter)
+    // Already handled by gender check above
   }
 
   // Category check
@@ -54,10 +69,14 @@ function calculateMatch(profile: UserProfile, scheme: Scheme): { score: number; 
     else { score += 15; reasons.push("Category eligible"); }
   }
 
-  // Education check
+  // Education check — STRICT: if scheme requires specific education, user must match
   if (e.education && e.education.length > 0) {
-    if (!e.education.includes(profile.education)) disqualified = true;
-    else { score += 10; reasons.push("Education level matches"); }
+    if (!e.education.includes(profile.education)) {
+      disqualified = true;
+    } else {
+      score += 10;
+      reasons.push("Education level matches");
+    }
   }
 
   // State check
@@ -68,11 +87,14 @@ function calculateMatch(profile: UserProfile, scheme: Scheme): { score: number; 
 
   if (disqualified) return { score: 0, reasons: [] };
 
-  // If no specific criteria, it's a universal scheme
+  // Universal schemes (no specific criteria) get a lower base score
   const hasCriteria = e.minAge || e.maxAge || e.gender || e.maxIncome || e.occupations || e.categories || e.education || e.states;
   if (!hasCriteria) {
-    return { score: 50, reasons: ["Universal scheme - open to all"] };
+    return { score: 30, reasons: ["Universal scheme - open to all"] };
   }
+
+  // Require at least one positive match beyond just "not disqualified"
+  if (score === 0) return { score: 0, reasons: [] };
 
   return { score, reasons };
 }
