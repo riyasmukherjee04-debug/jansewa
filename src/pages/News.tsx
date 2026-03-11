@@ -51,7 +51,7 @@ const News = () => {
           <TabsList className="flex flex-wrap h-auto gap-1">
             <TabsTrigger value="info-hub">📋 Info Hub</TabsTrigger>
             <TabsTrigger value="govt-schemes">💳 Govt Schemes</TabsTrigger>
-            <TabsTrigger value="global-policy">🌐 Global Policies</TabsTrigger>
+            <TabsTrigger value="global-policy">🌐 Global News</TabsTrigger>
             <TabsTrigger value="international">⚠️ International</TabsTrigger>
           </TabsList>
 
