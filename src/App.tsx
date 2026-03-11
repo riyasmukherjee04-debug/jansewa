@@ -9,6 +9,7 @@ import Index from "./pages/Index";
 import Schemes from "./pages/Schemes";
 import SchemeDetailPage from "./pages/SchemeDetailPage";
 import GovernmentInfo from "./pages/GovernmentInfo";
+import News from "./pages/News";
 import About from "./pages/About";
 import Auth from "./pages/Auth";
 import ForgotPassword from "./pages/ForgotPassword";
