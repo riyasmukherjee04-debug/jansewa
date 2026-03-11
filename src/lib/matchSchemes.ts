@@ -1,4 +1,4 @@
-import { Scheme, UserProfile } from "@/data/schemes";
+import { Scheme, UserProfile, Occupation } from "@/data/schemes";
 
 export interface MatchResult {
   scheme: Scheme;
@@ -52,15 +52,18 @@ function calculateMatch(profile: UserProfile, scheme: Scheme): { score: number; 
     }
   }
 
-  // Reverse occupation relevance — if scheme has NO occupation filter but targets
-  // a domain clearly irrelevant to the user's occupation, reduce relevance
+  // Reverse relevance — if scheme has NO occupation filter, use category to infer relevance
   if (!e.occupations || e.occupations.length === 0) {
-    // Agriculture schemes should only show to farmers
-    if (scheme.category === "agriculture" && profile.occupation !== "farmer") {
+    const categoryOccupationMap: Record<string, Occupation[]> = {
+      "agriculture": ["farmer"],
+      "education": ["student"],
+      "business": ["business", "self-employed"],
+      "employment": ["unemployed", "student", "salaried"],
+    };
+    const allowedOccupations = categoryOccupationMap[scheme.category];
+    if (allowedOccupations && !allowedOccupations.includes(profile.occupation)) {
       disqualified = true;
     }
-    // Women-specific schemes should only show to females (unless no gender filter)
-    // Already handled by gender check above
   }
 
   // Category check
@@ -87,11 +90,7 @@ function calculateMatch(profile: UserProfile, scheme: Scheme): { score: number; 
 
   if (disqualified) return { score: 0, reasons: [] };
 
-  // Universal schemes (no specific criteria) get a lower base score
-  const hasCriteria = e.minAge || e.maxAge || e.gender || e.maxIncome || e.occupations || e.categories || e.education || e.states;
-  if (!hasCriteria) {
-    return { score: 30, reasons: ["Universal scheme - open to all"] };
-  }
+  // Remove universal fallback — only show schemes that positively match the profile
 
   // Require at least one positive match beyond just "not disqualified"
   if (score === 0) return { score: 0, reasons: [] };
