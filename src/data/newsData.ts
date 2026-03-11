@@ -30,7 +30,32 @@ export interface GovtJobInfo {
   icon: string;
 }
 
-export type NewsCategory = "students-exams" | "govt-schemes" | "global-policy" | "international";
+export interface CropPrice {
+  crop: string;
+  msp: string;
+  marketPrice: string;
+  unit: string;
+  trend: "up" | "down" | "stable";
+  icon: string;
+}
+
+export type NewsCategory = "info-hub" | "govt-schemes" | "global-policy" | "international";
+
+// --- Crop Prices & MSP (2025-26) ---
+export const cropPrices: CropPrice[] = [
+  { crop: "Wheat", msp: "₹2,425/qtl", marketPrice: "₹2,580–2,750/qtl", unit: "per quintal", trend: "up", icon: "🌾" },
+  { crop: "Paddy (Rice)", msp: "₹2,400/qtl", marketPrice: "₹2,500–2,900/qtl", unit: "per quintal", trend: "up", icon: "🌾" },
+  { crop: "Mustard (Sarson)", msp: "₹5,950/qtl", marketPrice: "₹5,800–6,400/qtl", unit: "per quintal", trend: "stable", icon: "🌼" },
+  { crop: "Chana (Gram)", msp: "₹5,650/qtl", marketPrice: "₹6,100–7,200/qtl", unit: "per quintal", trend: "up", icon: "🫘" },
+  { crop: "Sugarcane", msp: "₹340/qtl (FRP)", marketPrice: "₹350–400/qtl", unit: "per quintal", trend: "stable", icon: "🎋" },
+  { crop: "Soybean", msp: "₹4,992/qtl", marketPrice: "₹4,800–5,500/qtl", unit: "per quintal", trend: "up", icon: "🫘" },
+  { crop: "Maize", msp: "₹2,225/qtl", marketPrice: "₹2,100–2,400/qtl", unit: "per quintal", trend: "stable", icon: "🌽" },
+  { crop: "Cotton (Medium Staple)", msp: "₹7,521/qtl", marketPrice: "₹7,200–8,100/qtl", unit: "per quintal", trend: "up", icon: "🧵" },
+  { crop: "Groundnut", msp: "₹6,377/qtl", marketPrice: "₹6,500–7,500/qtl", unit: "per quintal", trend: "up", icon: "🥜" },
+  { crop: "Onion", msp: "—", marketPrice: "₹15–35/kg", unit: "per kg", trend: "down", icon: "🧅" },
+  { crop: "Potato", msp: "—", marketPrice: "₹10–22/kg", unit: "per kg", trend: "stable", icon: "🥔" },
+  { crop: "Tomato", msp: "—", marketPrice: "₹20–55/kg", unit: "per kg", trend: "up", icon: "🍅" },
+];
 
 // --- Student Exams & Entrance Tests (2026) ---
 export const examData: ExamInfo[] = [
