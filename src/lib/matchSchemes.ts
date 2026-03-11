@@ -90,11 +90,7 @@ function calculateMatch(profile: UserProfile, scheme: Scheme): { score: number; 
 
   if (disqualified) return { score: 0, reasons: [] };
 
-  // Universal schemes (no specific criteria) get a lower base score
-  const hasCriteria = e.minAge || e.maxAge || e.gender || e.maxIncome || e.occupations || e.categories || e.education || e.states;
-  if (!hasCriteria) {
-    return { score: 30, reasons: ["Universal scheme - open to all"] };
-  }
+  // Remove universal fallback — only show schemes that positively match the profile
 
   // Require at least one positive match beyond just "not disqualified"
   if (score === 0) return { score: 0, reasons: [] };
