@@ -9,6 +9,7 @@ import Index from "./pages/Index";
 import Schemes from "./pages/Schemes";
 import SchemeDetailPage from "./pages/SchemeDetailPage";
 import GovernmentInfo from "./pages/GovernmentInfo";
+import News from "./pages/News";
 import About from "./pages/About";
 import Auth from "./pages/Auth";
 import ForgotPassword from "./pages/ForgotPassword";
@@ -32,6 +33,7 @@ const App = () => (
             <Route path="/" element={<ProtectedRoute><Index /></ProtectedRoute>} />
             <Route path="/schemes" element={<ProtectedRoute><Schemes /></ProtectedRoute>} />
             <Route path="/scheme/:id" element={<ProtectedRoute><SchemeDetailPage /></ProtectedRoute>} />
+            <Route path="/news" element={<ProtectedRoute><News /></ProtectedRoute>} />
             <Route path="/government-info" element={<ProtectedRoute><GovernmentInfo /></ProtectedRoute>} />
             <Route path="/about" element={<ProtectedRoute><About /></ProtectedRoute>} />
             <Route path="*" element={<NotFound />} />

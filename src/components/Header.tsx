@@ -8,6 +8,7 @@ import { toast } from "sonner";
 const navItems = [
   { path: "/", label: "Home" },
   { path: "/schemes", label: "Find Schemes" },
+  { path: "/news", label: "News & Updates" },
   { path: "/government-info", label: "Gov Info" },
   { path: "/about", label: "About" },
 ];
