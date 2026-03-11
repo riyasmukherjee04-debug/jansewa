@@ -51,7 +51,7 @@ const News = () => {
           <TabsList className="flex flex-wrap h-auto gap-1">
             <TabsTrigger value="info-hub">📋 Info Hub</TabsTrigger>
             <TabsTrigger value="govt-schemes">💳 Govt Schemes</TabsTrigger>
-            <TabsTrigger value="global-policy">🌐 Global Policies</TabsTrigger>
+            <TabsTrigger value="global-policy">🌐 Global News</TabsTrigger>
             <TabsTrigger value="international">⚠️ International</TabsTrigger>
           </TabsList>
 
@@ -200,12 +200,12 @@ const News = () => {
             </div>
           </TabsContent>
 
-          {/* Global Policies */}
+          {/* Global News */}
           <TabsContent value="global-policy">
-            <h2 className="text-2xl font-bold mb-2">Global Policies & Economy</h2>
-            <p className="text-sm text-muted-foreground mb-6">Fed rates, trade deals, BRICS, AI regulation, energy & more</p>
+            <h2 className="text-2xl font-bold mb-2">Global News & Politics</h2>
+            <p className="text-sm text-muted-foreground mb-6">Economy, trade, politics, regulations & world affairs — latest first</p>
             <div className="grid gap-4 sm:grid-cols-1 lg:grid-cols-2">
-              {globalPolicyNews.map((n) => (
+              {[...globalPolicyNews].reverse().map((n) => (
                 <Card key={n.id} className="hover:shadow-md transition-shadow">
                   <CardContent className="p-5">
                     <div className="flex items-start gap-3">
@@ -230,7 +230,7 @@ const News = () => {
             <h2 className="text-2xl font-bold mb-2">International News & Conflicts</h2>
             <p className="text-sm text-muted-foreground mb-6">Iran-Israel, Russia-Ukraine, Gaza, Asia, Africa, space, energy & geopolitics</p>
             <div className="grid gap-4 sm:grid-cols-1 lg:grid-cols-2">
-              {internationalNews.map((n) => (
+              {[...internationalNews].reverse().map((n) => (
                 <Card key={n.id} className="hover:shadow-md transition-shadow">
                   <CardContent className="p-5">
                     <div className="flex items-start gap-3">
