@@ -1,4 +1,4 @@
-import { Scheme, UserProfile } from "@/data/schemes";
+import { Scheme, UserProfile, Occupation } from "@/data/schemes";
 
 export interface MatchResult {
   scheme: Scheme;
