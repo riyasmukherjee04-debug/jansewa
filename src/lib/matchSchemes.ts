@@ -60,6 +60,10 @@ function calculateMatch(profile: UserProfile, scheme: Scheme): { score: number; 
       "business": ["business", "self-employed"],
       "employment": ["unemployed", "student", "salaried"],
     };
+    // Also block women-only category for males (additional safety)
+    if (scheme.category === "women" && profile.gender === "male") {
+      disqualified = true;
+    }
     const allowedOccupations = categoryOccupationMap[scheme.category];
     if (allowedOccupations && !allowedOccupations.includes(profile.occupation)) {
       disqualified = true;
