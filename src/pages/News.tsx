@@ -230,7 +230,7 @@ const News = () => {
             <h2 className="text-2xl font-bold mb-2">International News & Conflicts</h2>
             <p className="text-sm text-muted-foreground mb-6">Iran-Israel, Russia-Ukraine, Gaza, Asia, Africa, space, energy & geopolitics</p>
             <div className="grid gap-4 sm:grid-cols-1 lg:grid-cols-2">
-              {internationalNews.map((n) => (
+              {[...internationalNews].reverse().map((n) => (
                 <Card key={n.id} className="hover:shadow-md transition-shadow">
                   <CardContent className="p-5">
                     <div className="flex items-start gap-3">
