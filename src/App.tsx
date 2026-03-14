@@ -15,6 +15,7 @@ import Auth from "./pages/Auth";
 import ForgotPassword from "./pages/ForgotPassword";
 import ResetPassword from "./pages/ResetPassword";
 import Chatbot from "./components/Chatbot";
+import KnowIndia from "./pages/KnowIndia";
 import NotFound from "./pages/NotFound";
 
 const queryClient = new QueryClient();
