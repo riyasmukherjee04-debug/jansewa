@@ -36,6 +36,7 @@ const App = () => (
             <Route path="/scheme/:id" element={<ProtectedRoute><SchemeDetailPage /></ProtectedRoute>} />
             <Route path="/news" element={<ProtectedRoute><News /></ProtectedRoute>} />
             <Route path="/government-info" element={<ProtectedRoute><GovernmentInfo /></ProtectedRoute>} />
+            <Route path="/know-india" element={<ProtectedRoute><KnowIndia /></ProtectedRoute>} />
             <Route path="/about" element={<ProtectedRoute><About /></ProtectedRoute>} />
             <Route path="*" element={<NotFound />} />
           </Routes>
