@@ -8,7 +8,7 @@ import ProtectedRoute from "./components/ProtectedRoute";
 import Index from "./pages/Index";
 import Schemes from "./pages/Schemes";
 import SchemeDetailPage from "./pages/SchemeDetailPage";
-import GovernmentInfo from "./pages/GovernmentInfo";
+
 import News from "./pages/News";
 import About from "./pages/About";
 import Auth from "./pages/Auth";
@@ -36,7 +36,7 @@ const App = () => (
             <Route path="/schemes" element={<ProtectedRoute><Schemes /></ProtectedRoute>} />
             <Route path="/scheme/:id" element={<ProtectedRoute><SchemeDetailPage /></ProtectedRoute>} />
             <Route path="/news" element={<ProtectedRoute><News /></ProtectedRoute>} />
-            <Route path="/government-info" element={<ProtectedRoute><GovernmentInfo /></ProtectedRoute>} />
+            
             <Route path="/know-india" element={<ProtectedRoute><KnowIndia /></ProtectedRoute>} />
             <Route path="/citizen-services" element={<ProtectedRoute><CitizenServices /></ProtectedRoute>} />
             <Route path="/about" element={<ProtectedRoute><About /></ProtectedRoute>} />

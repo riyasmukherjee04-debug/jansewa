@@ -9,7 +9,6 @@ const navItems = [
   { path: "/", label: "Home" },
   { path: "/schemes", label: "Find Schemes" },
   { path: "/news", label: "News & Updates" },
-  { path: "/government-info", label: "Gov Info" },
   { path: "/know-india", label: "Know India" },
   { path: "/citizen-services", label: "Services Guide" },
   { path: "/about", label: "About" },
