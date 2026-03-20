@@ -27,6 +27,7 @@ const categories: { value: SchemeCategory | "all"; label: string }[] = [
 
 const Schemes = () => {
   const [searchParams] = useSearchParams();
+  const navigate = useNavigate();
   const [search, setSearch] = useState("");
   const [activeCategory, setActiveCategory] = useState<SchemeCategory | "all">("all");
   const [showForm, setShowForm] = useState(false);
