@@ -1,5 +1,5 @@
 import { useState, useMemo } from "react";
-import { useSearchParams } from "react-router-dom";
+import { useSearchParams, useNavigate } from "react-router-dom";
 import Header from "@/components/Header";
 import Footer from "@/components/Footer";
 import ProfileForm from "@/components/ProfileForm";
@@ -8,8 +8,9 @@ import { schemes, UserProfile, SchemeCategory } from "@/data/schemes";
 import { matchSchemes, MatchResult } from "@/lib/matchSchemes";
 import { Input } from "@/components/ui/input";
 import { Badge } from "@/components/ui/badge";
+import { Button } from "@/components/ui/button";
 import { Card, CardContent } from "@/components/ui/card";
-import { Search } from "lucide-react";
+import { Search, Sparkles } from "lucide-react";
 
 const categories: { value: SchemeCategory | "all"; label: string }[] = [
   { value: "all", label: "All" },
