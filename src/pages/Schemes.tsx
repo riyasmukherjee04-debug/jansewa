@@ -1,5 +1,5 @@
 import { useState, useMemo } from "react";
-import { useSearchParams } from "react-router-dom";
+import { useSearchParams, useNavigate } from "react-router-dom";
 import Header from "@/components/Header";
 import Footer from "@/components/Footer";
 import ProfileForm from "@/components/ProfileForm";
@@ -8,8 +8,9 @@ import { schemes, UserProfile, SchemeCategory } from "@/data/schemes";
 import { matchSchemes, MatchResult } from "@/lib/matchSchemes";
 import { Input } from "@/components/ui/input";
 import { Badge } from "@/components/ui/badge";
+import { Button } from "@/components/ui/button";
 import { Card, CardContent } from "@/components/ui/card";
-import { Search } from "lucide-react";
+import { Search, Sparkles } from "lucide-react";
 
 const categories: { value: SchemeCategory | "all"; label: string }[] = [
   { value: "all", label: "All" },
@@ -26,6 +27,7 @@ const categories: { value: SchemeCategory | "all"; label: string }[] = [
 
 const Schemes = () => {
   const [searchParams] = useSearchParams();
+  const navigate = useNavigate();
   const [search, setSearch] = useState("");
   const [activeCategory, setActiveCategory] = useState<SchemeCategory | "all">("all");
   const [showForm, setShowForm] = useState(false);
@@ -73,13 +75,23 @@ const Schemes = () => {
     <div className="min-h-screen flex flex-col">
       <Header />
       <main className="flex-1 container py-8">
-        <div className="flex items-center justify-between mb-6">
+        <div className="flex items-center justify-between mb-6 flex-wrap gap-3">
           <h1 className="text-3xl font-bold">
             {profile ? `${displayedSchemes.length} Schemes Found` : "All Government Schemes"}
           </h1>
-          <button onClick={() => setShowForm(!showForm)} className="text-sm text-primary hover:underline font-medium">
-            {profile ? "Update Profile" : "Filter by Profile"}
-          </button>
+          <div className="flex items-center gap-3">
+            {profile && (
+              <Button
+                onClick={() => navigate(`/scheme-assistant?${searchParams.toString()}`)}
+                className="gap-2"
+              >
+                <Sparkles className="h-4 w-4" /> Ask AI Assistant
+              </Button>
+            )}
+            <button onClick={() => setShowForm(!showForm)} className="text-sm text-primary hover:underline font-medium">
+              {profile ? "Update Profile" : "Filter by Profile"}
+            </button>
+          </div>
         </div>
 
         {(showForm || !profile) && (

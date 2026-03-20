@@ -2,3 +2,6 @@ project_id = "uvpoprssokzwvbdyzkgj"
 
 [functions.chat]
 verify_jwt = false
+
+[functions.scheme-assistant]
+verify_jwt = false
