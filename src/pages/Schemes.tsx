@@ -75,13 +75,23 @@ const Schemes = () => {
     <div className="min-h-screen flex flex-col">
       <Header />
       <main className="flex-1 container py-8">
-        <div className="flex items-center justify-between mb-6">
+        <div className="flex items-center justify-between mb-6 flex-wrap gap-3">
           <h1 className="text-3xl font-bold">
             {profile ? `${displayedSchemes.length} Schemes Found` : "All Government Schemes"}
           </h1>
-          <button onClick={() => setShowForm(!showForm)} className="text-sm text-primary hover:underline font-medium">
-            {profile ? "Update Profile" : "Filter by Profile"}
-          </button>
+          <div className="flex items-center gap-3">
+            {profile && (
+              <Button
+                onClick={() => navigate(`/scheme-assistant?${searchParams.toString()}`)}
+                className="gap-2"
+              >
+                <Sparkles className="h-4 w-4" /> Ask AI Assistant
+              </Button>
+            )}
+            <button onClick={() => setShowForm(!showForm)} className="text-sm text-primary hover:underline font-medium">
+              {profile ? "Update Profile" : "Filter by Profile"}
+            </button>
+          </div>
         </div>
 
         {(showForm || !profile) && (
