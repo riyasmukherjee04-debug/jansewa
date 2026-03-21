@@ -103,6 +103,7 @@ const SchemeAssistant = () => {
             .map((m) => ({ role: m.role, content: m.content })),
           profile,
           matchedSchemes: matchedSchemeData,
+          allSchemes: allSchemeData,
         }),
       });
 
