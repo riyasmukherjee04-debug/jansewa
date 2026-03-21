@@ -57,6 +57,16 @@ const SchemeAssistant = () => {
     }));
   }, [matchedResults]);
 
+  const allSchemeData = useMemo(() => {
+    return schemes.map((s) => ({
+      name: s.name,
+      category: s.category,
+      description: s.description,
+      benefits: s.benefits,
+      eligibility: s.eligibility,
+    }));
+  }, []);
+
   // Initial greeting
   useEffect(() => {
     if (profile) {
@@ -93,6 +103,7 @@ const SchemeAssistant = () => {
             .map((m) => ({ role: m.role, content: m.content })),
           profile,
           matchedSchemes: matchedSchemeData,
+          allSchemes: allSchemeData,
         }),
       });
 

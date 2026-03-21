@@ -9,7 +9,7 @@ serve(async (req) => {
   if (req.method === "OPTIONS") return new Response(null, { headers: corsHeaders });
 
   try {
-    const { messages, profile, matchedSchemes } = await req.json();
+    const { messages, profile, matchedSchemes, allSchemes } = await req.json();
     const LOVABLE_API_KEY = Deno.env.get("LOVABLE_API_KEY");
     if (!LOVABLE_API_KEY) throw new Error("LOVABLE_API_KEY is not configured");
 
@@ -25,7 +25,7 @@ serve(async (req) => {
       : "No profile provided.";
 
     const schemeSummary = matchedSchemes?.length
-      ? `\n\nEligible Government Schemes for this user (${matchedSchemes.length} schemes):\n` +
+      ? `\n\nPRIMARY ELIGIBLE SCHEMES (matched to user profile - ${matchedSchemes.length} schemes):\n` +
         matchedSchemes
           .map(
             (s: any, i: number) =>
@@ -34,28 +34,44 @@ serve(async (req) => {
           .join("\n\n")
       : "\n\nNo pre-matched schemes available.";
 
+    const allSchemesSummary = allSchemes?.length
+      ? `\n\nALL AVAILABLE GOVERNMENT SCHEMES (${allSchemes.length} total — use these when user's problem requires schemes outside their profile match):\n` +
+        allSchemes
+          .map(
+            (s: any, i: number) =>
+              `${i + 1}. **${s.name}** (${s.category}) - ${s.description}\n   Benefits: ${s.benefits}\n   Eligibility: Age ${s.eligibility?.minAge || 'any'}-${s.eligibility?.maxAge || 'any'}, Income ≤₹${s.eligibility?.maxIncome || 'any'}, Occupations: ${s.eligibility?.occupations?.join(', ') || 'any'}`
+          )
+          .join("\n")
+      : "";
+
     const systemPrompt = `You are JanSewa AI Scheme Assistant — a personalized government scheme advisor for Indian citizens.
 
 ${profileSummary}
 ${schemeSummary}
+${allSchemesSummary}
 
 YOUR ROLE:
-1. **Understand the user's specific needs** — they may be a farmer wanting cultivation tips, a student wanting to start a business, a woman entrepreneur, etc.
-2. **Recommend relevant government schemes** from the eligible schemes list above that match their stated requirements. Be smart about cross-matching:
-   - If a student wants to start a business → recommend BOTH education schemes AND business/startup schemes
-   - If a farmer needs financial help → recommend BOTH agriculture schemes AND financial inclusion schemes
-   - If a woman wants employment → recommend BOTH women-specific schemes AND employment schemes
-3. **Provide practical guidance** — tips, steps, and actionable advice related to their goals
-4. **Only recommend schemes from the eligible list** — don't invent schemes. If no scheme matches a specific need, say so honestly.
-5. **Format responses clearly** with scheme names in bold, benefits highlighted, and step-by-step application guidance.
+1. **Listen to the user's SPECIFIC PROBLEM first** — they may say "I lost my job", "I want to grow wheat", "I need money for my daughter's education", "I want to open a shop", etc.
+2. **Recommend schemes that SOLVE THEIR PROBLEM**, not just schemes matching their profile. Use BOTH the primary eligible list AND the full schemes list:
+   - A farmer asking about starting a side business → show agriculture + business/startup schemes
+   - A student wanting to become an entrepreneur → show education + business + financial schemes
+   - A woman wanting health insurance → show women + health + social-security schemes
+   - An unemployed person wanting skills training → show employment + education + skill schemes
+3. **Prioritize problem-relevance over profile-matching** — if a farmer asks about health, show health schemes even if they weren't in the farmer's primary matches.
+4. **Provide practical, actionable advice** for their problem along with scheme recommendations:
+   - Farming problems → give cultivation tips + relevant agriculture schemes
+   - Business problems → give startup advice + relevant business/financial schemes
+   - Health problems → give health guidance + insurance/health schemes
+5. **Format responses clearly**: scheme names in **bold**, benefits highlighted, and step-by-step application guidance.
+6. **Only recommend real schemes from the lists provided** — never invent schemes.
 
 GUIDELINES:
 - Be conversational, warm, and accessible
 - Respond in the same language the user writes in (Hindi, English, etc.)
-- For each recommended scheme, briefly explain WHY it's relevant to their specific requirement
-- If the user asks about something outside schemes (like farming tips, business advice), provide helpful general guidance AND link it to relevant schemes
+- For each scheme, explain WHY it solves their specific problem
+- If user describes a complex problem, break it down and recommend schemes for each aspect
+- Always provide the official URL for schemes you recommend
 - Keep responses focused and practical — avoid lengthy bureaucratic language`;
-
     const response = await fetch("https://ai.gateway.lovable.dev/v1/chat/completions", {
       method: "POST",
       headers: {
