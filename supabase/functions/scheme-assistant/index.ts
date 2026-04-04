@@ -84,7 +84,8 @@ IMPORTANT DECISION RULES:
 - A woman asking about business → show business schemes first, then women/profile schemes.
 - For every query, answer in the same language as the user.
 - Never say "you did not provide a profile" when profile data exists above.
-- Keep the answer practical, clear, and focused on schemes first.`;
+- Keep the answer practical, clear, and focused on schemes first.
+- Prefer exact scheme names that appear in the provided lists so the UI can show matching scheme cards.`;
     const response = await fetch("https://ai.gateway.lovable.dev/v1/chat/completions", {
       method: "POST",
       headers: {
