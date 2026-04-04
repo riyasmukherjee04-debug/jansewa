@@ -64,6 +64,8 @@ const SchemeAssistant = () => {
       description: s.description,
       benefits: s.benefits,
       eligibility: s.eligibility,
+      howToApply: s.howToApply,
+      officialUrl: s.officialUrl,
     }));
   }, []);
 
