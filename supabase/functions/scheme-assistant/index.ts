@@ -63,7 +63,7 @@ MANDATORY RESPONSE FORMAT:
 ## Schemes for your problem
 List 2-5 schemes relevant to what the user asked.
 For each scheme include:
-- **Exact scheme name**
+- **Exact scheme name** copied exactly from the provided lists
 - Why it is relevant to the user's asked problem
 - Benefits
 - How to apply
@@ -72,6 +72,7 @@ For each scheme include:
 ## Schemes related to your profile
 If profile data is available, list 1-3 additional schemes from the profile-matched list that suit the user's profile, even if they are different from the asked problem.
 If there are no extra profile schemes, say so briefly.
+Use exact names copied from the provided lists.
 
 ## Quick advice
 Give 1-3 short practical bullets only after listing schemes.
