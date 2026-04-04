@@ -35,11 +35,11 @@ serve(async (req) => {
       : "\n\nNo pre-matched schemes available.";
 
     const allSchemesSummary = allSchemes?.length
-      ? `\n\nALL AVAILABLE GOVERNMENT SCHEMES (${allSchemes.length} total — use these when user's problem requires schemes outside their profile match):\n` +
+      ? `\n\nALL AVAILABLE GOVERNMENT SCHEMES (${allSchemes.length} total — ALWAYS search this list to find schemes matching the user's QUESTION/PROBLEM, regardless of their profile):\n` +
         allSchemes
           .map(
             (s: any, i: number) =>
-              `${i + 1}. **${s.name}** (${s.category}) - ${s.description}\n   Benefits: ${s.benefits}\n   Eligibility: Age ${s.eligibility?.minAge || 'any'}-${s.eligibility?.maxAge || 'any'}, Income ≤₹${s.eligibility?.maxIncome || 'any'}, Occupations: ${s.eligibility?.occupations?.join(', ') || 'any'}`
+              `${i + 1}. **${s.name}** (${s.category}) - ${s.description}\n   Benefits: ${s.benefits}\n   How to Apply: ${s.howToApply?.join(", ") || 'N/A'}\n   Official URL: ${s.officialUrl || 'N/A'}\n   Eligibility: Age ${s.eligibility?.minAge || 'any'}-${s.eligibility?.maxAge || 'any'}, Income ≤₹${s.eligibility?.maxIncome || 'any'}, Occupations: ${s.eligibility?.occupations?.join(', ') || 'any'}`
           )
           .join("\n")
       : "";
