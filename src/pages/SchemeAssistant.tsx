@@ -1,5 +1,6 @@
 import { useState, useRef, useEffect, useMemo } from "react";
 import { useSearchParams, Link } from "react-router-dom";
+import ReactMarkdown from "react-markdown";
 import Header from "@/components/Header";
 import Footer from "@/components/Footer";
 import { schemes, UserProfile } from "@/data/schemes";
@@ -7,8 +8,7 @@ import { matchSchemes } from "@/lib/matchSchemes";
 import SchemeCard from "@/components/SchemeCard";
 import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
-import { ScrollArea } from "@/components/ui/scroll-area";
-import { Card, CardContent } from "@/components/ui/card";
+import { Card } from "@/components/ui/card";
 import { Badge } from "@/components/ui/badge";
 import { Send, Bot, User, Sparkles, ArrowLeft } from "lucide-react";
 import { toast } from "@/hooks/use-toast";
@@ -16,6 +16,28 @@ import { toast } from "@/hooks/use-toast";
 type Message = { role: "user" | "assistant"; content: string };
 
 const STREAM_URL = `${import.meta.env.VITE_SUPABASE_URL}/functions/v1/scheme-assistant`;
+
+/** Extract scheme names mentioned in AI responses and find matching scheme objects */
+const findMentionedSchemes = (messages: Message[]) => {
+  const assistantTexts = messages
+    .filter((m) => m.role === "assistant")
+    .map((m) => m.content)
+    .join(" ");
+  
+  const mentioned = schemes.filter((s) => {
+    const nameLower = s.name.toLowerCase();
+    const textLower = assistantTexts.toLowerCase();
+    return textLower.includes(nameLower);
+  });
+
+  // Deduplicate by id
+  const seen = new Set<string>();
+  return mentioned.filter((s) => {
+    if (seen.has(s.id)) return false;
+    seen.add(s.id);
+    return true;
+  });
+};
 
 const SchemeAssistant = () => {
   const [searchParams] = useSearchParams();
@@ -69,7 +91,17 @@ const SchemeAssistant = () => {
     }));
   }, []);
 
-  // Initial greeting
+  // Schemes mentioned by AI in conversation
+  const mentionedSchemes = useMemo(() => findMentionedSchemes(messages), [messages]);
+
+  // Profile-matched schemes not already mentioned
+  const profileOnlySchemes = useMemo(() => {
+    const mentionedIds = new Set(mentionedSchemes.map((s) => s.id));
+    return matchedResults
+      .filter((r) => !mentionedIds.has(r.scheme.id))
+      .slice(0, 3);
+  }, [matchedResults, mentionedSchemes]);
+
   useEffect(() => {
     if (profile) {
       const greeting = `Namaste! 🙏 I'm your JanSewa AI Assistant. Based on your profile (**${profile.occupation}**, **${profile.education}**, **${profile.state}**), I found **${matchedResults.length} eligible schemes** for you.\n\nTell me what you need — for example:\n- "I want to start a business"\n- "I need tips for farming"\n- "I'm a student looking for scholarships"\n- "I need housing loan help"\n\nI'll recommend the best schemes and give you practical guidance! 🎯`;
@@ -160,7 +192,6 @@ const SchemeAssistant = () => {
         }
       }
 
-      // flush
       if (buffer.trim()) {
         for (let raw of buffer.split("\n")) {
           if (!raw.startsWith("data: ")) continue;
@@ -183,8 +214,6 @@ const SchemeAssistant = () => {
 
     setLoading(false);
   };
-
-  const topSchemes = matchedResults.slice(0, 4);
 
   return (
     <div className="min-h-screen flex flex-col">
@@ -227,13 +256,29 @@ const SchemeAssistant = () => {
                       </div>
                     )}
                     <div
-                      className={`max-w-[80%] rounded-2xl px-4 py-3 text-sm whitespace-pre-wrap ${
+                      className={`max-w-[80%] rounded-2xl px-4 py-3 text-sm ${
                         msg.role === "user"
-                          ? "bg-primary text-primary-foreground rounded-br-md"
+                          ? "bg-primary text-primary-foreground rounded-br-md whitespace-pre-wrap"
                           : "bg-muted rounded-bl-md"
                       }`}
                     >
-                      {msg.content}
+                      {msg.role === "assistant" ? (
+                        <div className="prose prose-sm max-w-none dark:prose-invert prose-p:my-1 prose-li:my-0.5 prose-headings:my-2 prose-a:text-primary">
+                          <ReactMarkdown
+                            components={{
+                              a: ({ href, children }) => (
+                                <a href={href} target="_blank" rel="noopener noreferrer" className="text-primary underline hover:text-primary/80">
+                                  {children}
+                                </a>
+                              ),
+                            }}
+                          >
+                            {msg.content}
+                          </ReactMarkdown>
+                        </div>
+                      ) : (
+                        msg.content
+                      )}
                     </div>
                     {msg.role === "user" && (
                       <div className="h-8 w-8 rounded-full bg-secondary/10 flex items-center justify-center shrink-0">
@@ -295,18 +340,40 @@ const SchemeAssistant = () => {
             </Card>
           </div>
 
-          {/* Sidebar - Top Matched Schemes */}
-          <div className="space-y-4">
-            <h2 className="font-bold text-lg">Top Matched Schemes</h2>
-            <p className="text-sm text-muted-foreground">
-              {matchedResults.length} schemes match your profile. Ask the AI for personalized recommendations!
-            </p>
-            {topSchemes.map((r) => (
+          {/* Sidebar - Dynamic Schemes */}
+          <div className="space-y-4 max-h-[600px] overflow-y-auto">
+            {/* AI-Recommended Schemes (from conversation) */}
+            {mentionedSchemes.length > 0 && (
+              <>
+                <div>
+                  <h2 className="font-bold text-lg flex items-center gap-2">
+                    <Sparkles className="h-4 w-4 text-primary" /> AI Recommended
+                  </h2>
+                  <p className="text-xs text-muted-foreground">
+                    Schemes mentioned by AI based on your query
+                  </p>
+                </div>
+                {mentionedSchemes.map((s) => (
+                  <SchemeCard key={s.id} scheme={s} />
+                ))}
+              </>
+            )}
+
+            {/* Profile-Matched Schemes */}
+            <div>
+              <h2 className="font-bold text-lg">
+                {mentionedSchemes.length > 0 ? "Your Profile Schemes" : "Top Matched Schemes"}
+              </h2>
+              <p className="text-xs text-muted-foreground">
+                {matchedResults.length} schemes match your profile
+              </p>
+            </div>
+            {(mentionedSchemes.length > 0 ? profileOnlySchemes : matchedResults.slice(0, 4)).map((r) => (
               <SchemeCard key={r.scheme.id} scheme={r.scheme} score={r.score} matchReasons={r.matchReasons} />
             ))}
             {matchedResults.length > 4 && (
               <Link to={`/schemes?${searchParams.toString()}`}>
-                <Button variant="outline" className="w-full">
+                <Button variant="outline" className="w-full text-sm">
                   View All {matchedResults.length} Schemes
                 </Button>
               </Link>
