@@ -41,20 +41,21 @@ export interface CropPrice {
 
 export type NewsCategory = "info-hub" | "govt-schemes" | "global-policy" | "international";
 
-// --- Crop Prices & MSP (2025-26) ---
+// --- Crop Prices & MSP (RMS 2026-27, updated April 2026) ---
 export const cropPrices: CropPrice[] = [
-  { crop: "Wheat", msp: "₹2,425/qtl", marketPrice: "₹2,580–2,750/qtl", unit: "per quintal", trend: "up", icon: "🌾" },
+  { crop: "Wheat", msp: "₹2,575/qtl", marketPrice: "₹2,450–2,700/qtl", unit: "per quintal", trend: "stable", icon: "🌾" },
   { crop: "Paddy (Rice)", msp: "₹2,400/qtl", marketPrice: "₹2,500–2,900/qtl", unit: "per quintal", trend: "up", icon: "🌾" },
-  { crop: "Mustard (Sarson)", msp: "₹5,950/qtl", marketPrice: "₹5,800–6,400/qtl", unit: "per quintal", trend: "stable", icon: "🌼" },
-  { crop: "Chana (Gram)", msp: "₹5,650/qtl", marketPrice: "₹6,100–7,200/qtl", unit: "per quintal", trend: "up", icon: "🫘" },
+  { crop: "Mustard (Sarson)", msp: "₹5,950/qtl", marketPrice: "₹5,600–6,200/qtl", unit: "per quintal", trend: "down", icon: "🌼" },
+  { crop: "Chana (Gram)", msp: "₹5,650/qtl", marketPrice: "₹6,800–7,500/qtl", unit: "per quintal", trend: "up", icon: "🫘" },
   { crop: "Sugarcane", msp: "₹340/qtl (FRP)", marketPrice: "₹350–400/qtl", unit: "per quintal", trend: "stable", icon: "🎋" },
-  { crop: "Soybean", msp: "₹4,992/qtl", marketPrice: "₹4,800–5,500/qtl", unit: "per quintal", trend: "up", icon: "🫘" },
-  { crop: "Maize", msp: "₹2,225/qtl", marketPrice: "₹2,100–2,400/qtl", unit: "per quintal", trend: "stable", icon: "🌽" },
-  { crop: "Cotton (Medium Staple)", msp: "₹7,521/qtl", marketPrice: "₹7,200–8,100/qtl", unit: "per quintal", trend: "up", icon: "🧵" },
+  { crop: "Soybean", msp: "₹4,992/qtl", marketPrice: "₹4,600–5,200/qtl", unit: "per quintal", trend: "down", icon: "🫘" },
+  { crop: "Maize", msp: "₹2,225/qtl", marketPrice: "₹2,100–2,350/qtl", unit: "per quintal", trend: "stable", icon: "🌽" },
+  { crop: "Cotton (Medium Staple)", msp: "₹7,521/qtl", marketPrice: "₹7,000–7,800/qtl", unit: "per quintal", trend: "down", icon: "🧵" },
   { crop: "Groundnut", msp: "₹6,377/qtl", marketPrice: "₹6,500–7,500/qtl", unit: "per quintal", trend: "up", icon: "🥜" },
-  { crop: "Onion", msp: "—", marketPrice: "₹15–35/kg", unit: "per kg", trend: "down", icon: "🧅" },
-  { crop: "Potato", msp: "—", marketPrice: "₹10–22/kg", unit: "per kg", trend: "stable", icon: "🥔" },
-  { crop: "Tomato", msp: "—", marketPrice: "₹25–60/kg", unit: "per kg", trend: "up", icon: "🍅" },
+  { crop: "Lentil (Masur)", msp: "₹6,700/qtl", marketPrice: "₹6,400–7,200/qtl", unit: "per quintal", trend: "up", icon: "🫘" },
+  { crop: "Onion", msp: "—", marketPrice: "₹18–40/kg", unit: "per kg", trend: "up", icon: "🧅" },
+  { crop: "Potato", msp: "—", marketPrice: "₹8–18/kg", unit: "per kg", trend: "down", icon: "🥔" },
+  { crop: "Tomato", msp: "—", marketPrice: "₹30–70/kg", unit: "per kg", trend: "up", icon: "🍅" },
   { crop: "Moong (Green Gram)", msp: "₹8,682/qtl", marketPrice: "₹8,400–9,200/qtl", unit: "per quintal", trend: "up", icon: "🫘" },
   { crop: "Tur (Arhar)", msp: "₹7,550/qtl", marketPrice: "₹9,500–11,000/qtl", unit: "per quintal", trend: "up", icon: "🫘" },
 ];
@@ -126,67 +127,67 @@ export const govtJobs: GovtJobInfo[] = [
   { title: "UPSC EPFO Enforcement Officer 2026", organization: "UPSC / EPFO", vacancies: "~500 posts", lastDate: "Apr 25, 2026", eligibility: "Graduate, 21–30 yrs", sector: "Central Govt", icon: "📋" },
 ];
 
-// --- Government Schemes / Policy News (up to April 2026) ---
+// --- Government Schemes / Policy News (up to April 7, 2026) ---
 export const govtSchemeNews: NewsItem[] = [
   {
-    id: "gs1", title: "Pink Card (Mahila Samman Card) Launched for Women",
-    summary: "New Pink Card scheme provides ₹3,000/month direct benefit transfer to women aged 18–60 in select states. Covers health checkups, subsidized ration, and free bus travel. Applications open on India.gov.in and CSC centres.",
-    date: "March 2026", source: "Ministry of Women & Child Development", category: "govt-schemes", icon: "💳"
+    id: "gs1", title: "Delhi Launches 'Lakhpati Bitiya Yojana' for Girls' Education",
+    summary: "Delhi govt rolls out Lakhpati Bitiya Scheme replacing the old Ladli plan. Girls born in Delhi get ₹1 lakh deposited in their account for education and empowerment. Gazette notification issued March 30, effective April 1, 2026.",
+    date: "Apr 1, 2026", source: "Delhi Govt / Business Standard", category: "govt-schemes", icon: "👧"
   },
   {
-    id: "gs2", title: "PM Internship Scheme 2.0 — 1.5 Crore Internships",
-    summary: "Expanded PM Internship Scheme now offers ₹5,000/month stipend + ₹6,000 one-time grant to graduates doing internships at top 500 companies. Open for 18–25 year olds with graduation. Apply on pminternship.mca.gov.in.",
-    date: "March 2026", source: "Ministry of Corporate Affairs", category: "govt-schemes", icon: "🎓"
+    id: "gs2", title: "Odisha Annapurna Yojana — ₹8,813 Crore for Food Security",
+    summary: "Odisha expands food net with Annapurna Yojana providing 5 kg additional rice per person monthly. Covers 3.28 crore beneficiaries, significantly expanding food security beyond NFSA. CM Majhi chairs cabinet approval.",
+    date: "Apr 5, 2026", source: "Business Standard", category: "govt-schemes", icon: "🍚"
   },
   {
-    id: "gs3", title: "Ayushman Bharat Extended to All Seniors 70+",
-    summary: "All citizens above 70 years now get ₹5 lakh/year free health insurance under Ayushman Bharat regardless of income. Over 3.2 crore Ayushman Vay Vandana cards issued.",
-    date: "Feb 2026", source: "Ministry of Health", category: "govt-schemes", icon: "🏥"
+    id: "gs3", title: "Punjab Aashirwad Scheme — Financial Assistance to Women",
+    summary: "Punjab cabinet approves scheme giving ₹2,500/month financial assistance to women aged 18–60. Launched on April 13 (Baisakhi). Applications via Punjab Seva Kendras and online portal.",
+    date: "Apr 3, 2026", source: "Tribune India", category: "govt-schemes", icon: "💳"
   },
   {
-    id: "gs4", title: "Unified Pension Scheme (UPS) Replaces NPS for Govt Employees",
-    summary: "The new UPS guarantees 50% of average basic pay as pension for central govt employees with 25+ years of service. Assured minimum ₹10,000/month pension. Effective from April 2025.",
-    date: "Jan 2026", source: "DoPT", category: "govt-schemes", icon: "👴"
+    id: "gs4", title: "Commercial LPG Prices Hiked ₹195.50 Amid West Asia War",
+    summary: "19-kg commercial LPG cylinder now costs ₹2,078.50 in Delhi after ₹195.50 hike due to rising global crude amid Iran-US war. Domestic 14.2-kg cylinder rates unchanged at ₹803 (Delhi).",
+    date: "Apr 1, 2026", source: "Indian Oil / New Indian Express", category: "govt-schemes", icon: "🔥"
   },
   {
-    id: "gs5", title: "PM Surya Ghar Muft Bijli Yojana — 1 Crore Solar Rooftops",
-    summary: "Free solar rooftop installation for households with up to 3 kW. Get 300 units free electricity/month. Subsidy of ₹78,000 for 3kW system. Apply at pmsuryaghar.gov.in.",
-    date: "Feb 2026", source: "MNRE", category: "govt-schemes", icon: "☀️"
+    id: "gs5", title: "Centre Eases Fund Release for Centrally Sponsored Schemes",
+    summary: "Govt introduces 'mother sanctions' allowing ministries to issue consolidated approvals for multiple centrally sponsored schemes at once. Speeds up fund flow to states significantly.",
+    date: "Apr 4, 2026", source: "Mint / PIB", category: "govt-schemes", icon: "💰"
   },
   {
-    id: "gs6", title: "Income Tax — No Tax Up to ₹12 Lakh (New Regime)",
-    summary: "Under the new tax regime (Budget 2025-26), salaried individuals earning up to ₹12.75 lakh pay zero income tax. Standard deduction of ₹75,000 included.",
-    date: "FY 2025-26", source: "Ministry of Finance", category: "govt-schemes", icon: "💰"
+    id: "gs6", title: "Odisha Approves ₹589 Crore Handloom Scheme (MHBY)",
+    summary: "Mukhyamantri Hastatanta Bunkar Yojana approved at ₹589 crore to boost weavers and skill development. Also cleared smartphones for 79,000 anganwadi workers for POSHAN tracking.",
+    date: "Apr 6, 2026", source: "New Indian Express", category: "govt-schemes", icon: "🧵"
   },
   {
-    id: "gs7", title: "Namo Drone Didi — Drones for Women SHGs",
-    summary: "15,000 drones distributed to women self-help groups for agricultural use — pesticide spraying, crop monitoring. Each SHG gets drone + training + ₹15,000/month income potential.",
-    date: "March 2026", source: "Ministry of Agriculture", category: "govt-schemes", icon: "🚁"
+    id: "gs7", title: "Odisha Doubles SC/ST Reservation Quota",
+    summary: "Odisha government doubles reservation for SC and ST communities in government jobs and education. Historic decision aims to address decades of social disparity in the state.",
+    date: "Apr 5, 2026", source: "Indian Express", category: "govt-schemes", icon: "⚖️"
   },
   {
-    id: "gs8", title: "NPS Vatsalya — Pension for Children",
-    summary: "Parents can now open NPS accounts for children (minors). Minimum ₹1,000/year contribution. Account converts to regular NPS at age 18. Tax benefits under Section 80CCD.",
-    date: "Jan 2026", source: "PFRDA", category: "govt-schemes", icon: "👶"
+    id: "gs8", title: "Union Budget 2026-27 — No Tax Up to ₹12.75 Lakh",
+    summary: "Budget 2026-27 continues zero income tax for salaried up to ₹12.75 lakh under new regime. Standard deduction ₹75,000. Focus on agriculture, MSME, digital economy, and green energy.",
+    date: "Feb 2026", source: "Ministry of Finance / PIB", category: "govt-schemes", icon: "💰"
   },
   {
     id: "gs9", title: "PM Vishwakarma Yojana 2.0 — Enhanced Artisan Support",
-    summary: "Expanded PM Vishwakarma scheme now covers 30 trades (up from 18). Artisans get ₹3 lakh collateral-free loan at 5% interest, digital skills training, and e-marketplace listing. Apply at pmvishwakarma.gov.in.",
-    date: "April 2026", source: "Ministry of MSME", category: "govt-schemes", icon: "🔨"
+    summary: "Expanded PM Vishwakarma scheme now covers 30 trades. Artisans get ₹3 lakh collateral-free loan at 5% interest, digital skills training, and e-marketplace listing. Apply at pmvishwakarma.gov.in.",
+    date: "Apr 2026", source: "Ministry of MSME", category: "govt-schemes", icon: "🔨"
   },
   {
-    id: "gs10", title: "One Nation One Ration Card — 100% Coverage Achieved",
-    summary: "All 81.35 crore NFSA beneficiaries can now access ration from any Fair Price Shop across India using Aadhaar-linked ration cards. Portability fully operational in all 36 states/UTs.",
-    date: "April 2026", source: "Ministry of Consumer Affairs", category: "govt-schemes", icon: "🍚"
+    id: "gs10", title: "Digital Agriculture Mission — AI for Farmers Launched",
+    summary: "New Digital Agriculture Mission provides AI-based crop advisory, satellite-monitored soil health cards, and drone-assisted precision farming. ₹2,817 crore allocation for FY2026-27.",
+    date: "Apr 2026", source: "Ministry of Agriculture", category: "govt-schemes", icon: "🌱"
   },
   {
-    id: "gs11", title: "Digital Agriculture Mission Launched — AI for Farmers",
-    summary: "New Digital Agriculture Mission provides AI-based crop advisory, satellite-monitored soil health cards, and drone-assisted precision farming. Budget allocation of ₹2,817 crore for FY2026-27.",
-    date: "April 2026", source: "Ministry of Agriculture", category: "govt-schemes", icon: "🌱"
+    id: "gs11", title: "Mudra Loan Tarun Category Limit Raised to ₹20 Lakh",
+    summary: "PM MUDRA Yojana's Tarun category increased from ₹10 lakh to ₹20 lakh. Over 47 crore loans disbursed since inception. Apply at any bank branch or Udyami Mitra portal.",
+    date: "Apr 2026", source: "Ministry of Finance", category: "govt-schemes", icon: "💼"
   },
   {
-    id: "gs12", title: "Mudra Loan Limit Raised to ₹20 Lakh Under Tarun Category",
-    summary: "PM MUDRA Yojana's Tarun category loan limit increased from ₹10 lakh to ₹20 lakh for micro-entrepreneurs. Over 47 crore loans disbursed since inception. Apply at any bank or via Udyami Mitra portal.",
-    date: "April 2026", source: "Ministry of Finance", category: "govt-schemes", icon: "💼"
+    id: "gs12", title: "PM Surya Ghar Muft Bijli Yojana — 1 Crore Solar Rooftops",
+    summary: "Free solar rooftop installation for households with up to 3 kW. Get 300 units free electricity/month. Subsidy of ₹78,000 for 3kW system. Apply at pmsuryaghar.gov.in.",
+    date: "Feb 2026", source: "MNRE", category: "govt-schemes", icon: "☀️"
   },
 ];
 
