@@ -41,20 +41,21 @@ export interface CropPrice {
 
 export type NewsCategory = "info-hub" | "govt-schemes" | "global-policy" | "international";
 
-// --- Crop Prices & MSP (2025-26) ---
+// --- Crop Prices & MSP (RMS 2026-27, updated April 2026) ---
 export const cropPrices: CropPrice[] = [
-  { crop: "Wheat", msp: "₹2,425/qtl", marketPrice: "₹2,580–2,750/qtl", unit: "per quintal", trend: "up", icon: "🌾" },
+  { crop: "Wheat", msp: "₹2,575/qtl", marketPrice: "₹2,450–2,700/qtl", unit: "per quintal", trend: "stable", icon: "🌾" },
   { crop: "Paddy (Rice)", msp: "₹2,400/qtl", marketPrice: "₹2,500–2,900/qtl", unit: "per quintal", trend: "up", icon: "🌾" },
-  { crop: "Mustard (Sarson)", msp: "₹5,950/qtl", marketPrice: "₹5,800–6,400/qtl", unit: "per quintal", trend: "stable", icon: "🌼" },
-  { crop: "Chana (Gram)", msp: "₹5,650/qtl", marketPrice: "₹6,100–7,200/qtl", unit: "per quintal", trend: "up", icon: "🫘" },
+  { crop: "Mustard (Sarson)", msp: "₹5,950/qtl", marketPrice: "₹5,600–6,200/qtl", unit: "per quintal", trend: "down", icon: "🌼" },
+  { crop: "Chana (Gram)", msp: "₹5,650/qtl", marketPrice: "₹6,800–7,500/qtl", unit: "per quintal", trend: "up", icon: "🫘" },
   { crop: "Sugarcane", msp: "₹340/qtl (FRP)", marketPrice: "₹350–400/qtl", unit: "per quintal", trend: "stable", icon: "🎋" },
-  { crop: "Soybean", msp: "₹4,992/qtl", marketPrice: "₹4,800–5,500/qtl", unit: "per quintal", trend: "up", icon: "🫘" },
-  { crop: "Maize", msp: "₹2,225/qtl", marketPrice: "₹2,100–2,400/qtl", unit: "per quintal", trend: "stable", icon: "🌽" },
-  { crop: "Cotton (Medium Staple)", msp: "₹7,521/qtl", marketPrice: "₹7,200–8,100/qtl", unit: "per quintal", trend: "up", icon: "🧵" },
+  { crop: "Soybean", msp: "₹4,992/qtl", marketPrice: "₹4,600–5,200/qtl", unit: "per quintal", trend: "down", icon: "🫘" },
+  { crop: "Maize", msp: "₹2,225/qtl", marketPrice: "₹2,100–2,350/qtl", unit: "per quintal", trend: "stable", icon: "🌽" },
+  { crop: "Cotton (Medium Staple)", msp: "₹7,521/qtl", marketPrice: "₹7,000–7,800/qtl", unit: "per quintal", trend: "down", icon: "🧵" },
   { crop: "Groundnut", msp: "₹6,377/qtl", marketPrice: "₹6,500–7,500/qtl", unit: "per quintal", trend: "up", icon: "🥜" },
-  { crop: "Onion", msp: "—", marketPrice: "₹15–35/kg", unit: "per kg", trend: "down", icon: "🧅" },
-  { crop: "Potato", msp: "—", marketPrice: "₹10–22/kg", unit: "per kg", trend: "stable", icon: "🥔" },
-  { crop: "Tomato", msp: "—", marketPrice: "₹25–60/kg", unit: "per kg", trend: "up", icon: "🍅" },
+  { crop: "Lentil (Masur)", msp: "₹6,700/qtl", marketPrice: "₹6,400–7,200/qtl", unit: "per quintal", trend: "up", icon: "🫘" },
+  { crop: "Onion", msp: "—", marketPrice: "₹18–40/kg", unit: "per kg", trend: "up", icon: "🧅" },
+  { crop: "Potato", msp: "—", marketPrice: "₹8–18/kg", unit: "per kg", trend: "down", icon: "🥔" },
+  { crop: "Tomato", msp: "—", marketPrice: "₹30–70/kg", unit: "per kg", trend: "up", icon: "🍅" },
   { crop: "Moong (Green Gram)", msp: "₹8,682/qtl", marketPrice: "₹8,400–9,200/qtl", unit: "per quintal", trend: "up", icon: "🫘" },
   { crop: "Tur (Arhar)", msp: "₹7,550/qtl", marketPrice: "₹9,500–11,000/qtl", unit: "per quintal", trend: "up", icon: "🫘" },
 ];
@@ -108,85 +109,85 @@ export const examData: ExamInfo[] = [
   { name: "UGC NET 2026", fullName: "National Eligibility Test (Lectureship/JRF)", examDate: "Jun 2026 & Dec 2026", registrationDeadline: "Mar 2026 (Jun) / Sep 2026 (Dec)", eligibility: "Master's degree with 55% (50% OBC/SC/ST)", website: "ugcnet.nta.nic.in", icon: "🎓", category: "govt-exam" },
 ];
 
-// --- Government Job Openings (2026) ---
+// --- Government Job Openings (April 2026) ---
 export const govtJobs: GovtJobInfo[] = [
-  { title: "IAS/IPS/IFS — UPSC Civil Services 2026", organization: "Union Public Service Commission", vacancies: "~1,000 posts", lastDate: "Prelims: May 24, 2026", eligibility: "Graduate, 21–32 yrs", sector: "Administrative", icon: "🇮🇳" },
-  { title: "SSC CGL 2026 — Group B & C Posts", organization: "Staff Selection Commission", vacancies: "~17,000 posts", lastDate: "May 15, 2026", eligibility: "Graduate", sector: "Central Govt", icon: "📝" },
-  { title: "IBPS PO 2026 — Probationary Officers", organization: "IBPS", vacancies: "~4,500 posts", lastDate: "Aug 2026", eligibility: "Graduate, 20–30 yrs", sector: "Banking", icon: "🏦" },
+  { title: "UPSC Civil Services 2026 — Prelims May 24", organization: "Union Public Service Commission", vacancies: "~1,000 posts", lastDate: "Prelims: May 24, 2026", eligibility: "Graduate, 21–32 yrs", sector: "Administrative", icon: "🇮🇳" },
+  { title: "SSC CGL 2026 — Tier 1 Registration Open", organization: "Staff Selection Commission", vacancies: "~17,000 posts", lastDate: "May 15, 2026", eligibility: "Graduate", sector: "Central Govt", icon: "📝" },
+  { title: "Railway RRB ALP CEN 01/2026 — Fresh Notification", organization: "Railway Recruitment Board", vacancies: "~5,000+ posts", lastDate: "May 2026", eligibility: "ITI / Diploma / Engineering", sector: "Railways", icon: "🚂" },
+  { title: "UPSC NDA 1 2026 — Admit Card Out", organization: "UPSC", vacancies: "~400 posts", lastDate: "Exam: Apr 13, 2026", eligibility: "12th pass, 16.5–19.5 yrs, unmarried", sector: "Defence", icon: "🎖️" },
+  { title: "MPESB Nursing Officer 2026", organization: "MP Professional Examination Board", vacancies: "2,317 posts", lastDate: "Apr 30, 2026", eligibility: "B.Sc Nursing / GNM", sector: "State Govt (MP)", icon: "🏥" },
+  { title: "Punjab Police Bharti 2026", organization: "Punjab Police", vacancies: "3,297 posts", lastDate: "May 2026", eligibility: "10th/12th, age 18–28", sector: "State Police", icon: "👮" },
+  { title: "SSB Constable Tradesman 2026", organization: "Sashastra Seema Bal", vacancies: "~1,500 posts", lastDate: "Apr 25, 2026", eligibility: "10th + ITI, 18–25 yrs", sector: "Defence/Para", icon: "🛡️" },
+  { title: "IBPS PO 2026 — Notification Expected Aug", organization: "IBPS", vacancies: "~4,500 posts", lastDate: "Aug 2026 (expected)", eligibility: "Graduate, 20–30 yrs", sector: "Banking", icon: "🏦" },
   { title: "RBI Grade B Officer 2026", organization: "Reserve Bank of India", vacancies: "~300 posts", lastDate: "Jul 2026", eligibility: "Graduate 60%, 21–30 yrs", sector: "Banking", icon: "🏛️" },
-  { title: "Railway RRB NTPC 2026", organization: "Railway Recruitment Board", vacancies: "~35,000+ posts", lastDate: "Apr 2026", eligibility: "12th / Graduate", sector: "Railways", icon: "🚂" },
   { title: "Indian Army Agniveer 2026", organization: "Indian Army", vacancies: "~46,000 posts", lastDate: "Rolling", eligibility: "10th/12th, 17.5–23 yrs", sector: "Defence", icon: "🎖️" },
-  { title: "Indian Navy Agniveer SSR/MR 2026", organization: "Indian Navy", vacancies: "~3,000 posts", lastDate: "Rolling", eligibility: "12th (PCM for SSR), 17.5–23 yrs", sector: "Defence", icon: "⚓" },
-  { title: "DRDO Scientist B 2026", organization: "DRDO (via GATE)", vacancies: "~200 posts", lastDate: "May 2026", eligibility: "B.E/B.Tech + GATE score", sector: "Research & Defence", icon: "🔬" },
+  { title: "DRDO Scientist B 2026 (via GATE)", organization: "DRDO", vacancies: "~200 posts", lastDate: "May 2026", eligibility: "B.E/B.Tech + GATE score", sector: "Research & Defence", icon: "🔬" },
   { title: "ISRO Scientist/Engineer SC 2026", organization: "ISRO", vacancies: "~150 posts", lastDate: "Jun 2026", eligibility: "B.E/B.Tech, 35 yrs max", sector: "Space & Research", icon: "🚀" },
-  { title: "Teacher TET / CTET 2026", organization: "CBSE / State Boards", vacancies: "Various state quotas", lastDate: "Rolling by state", eligibility: "D.El.Ed / B.Ed + TET qualified", sector: "Education", icon: "👩‍🏫" },
+  { title: "UP Lekhpal 2026 — Results Declared", organization: "UPSSSC", vacancies: "7,994 posts", lastDate: "Results Out", eligibility: "12th + Revenue Training", sector: "State Govt (UP)", icon: "📋" },
   { title: "State PSC — Various States 2026", organization: "State Public Service Commissions", vacancies: "~50,000+ combined", lastDate: "Varies by state", eligibility: "Graduate, varies", sector: "State Govt", icon: "🏢" },
-  { title: "SEBI Grade A Officer 2026", organization: "Securities & Exchange Board", vacancies: "~100 posts", lastDate: "Jul 2026", eligibility: "Graduate/PG, 30 yrs max", sector: "Finance/Regulatory", icon: "📊" },
-  { title: "FCI Manager & AGM 2026", organization: "Food Corporation of India", vacancies: "~5,000 posts", lastDate: "May 30, 2026", eligibility: "Graduate, varies by post", sector: "Central Govt", icon: "🏢" },
-  { title: "UPSC EPFO Enforcement Officer 2026", organization: "UPSC / EPFO", vacancies: "~500 posts", lastDate: "Apr 25, 2026", eligibility: "Graduate, 21–30 yrs", sector: "Central Govt", icon: "📋" },
 ];
 
-// --- Government Schemes / Policy News (up to April 2026) ---
+// --- Government Schemes / Policy News (up to April 7, 2026) ---
 export const govtSchemeNews: NewsItem[] = [
   {
-    id: "gs1", title: "Pink Card (Mahila Samman Card) Launched for Women",
-    summary: "New Pink Card scheme provides ₹3,000/month direct benefit transfer to women aged 18–60 in select states. Covers health checkups, subsidized ration, and free bus travel. Applications open on India.gov.in and CSC centres.",
-    date: "March 2026", source: "Ministry of Women & Child Development", category: "govt-schemes", icon: "💳"
+    id: "gs1", title: "Delhi Launches 'Lakhpati Bitiya Yojana' for Girls' Education",
+    summary: "Delhi govt rolls out Lakhpati Bitiya Scheme replacing the old Ladli plan. Girls born in Delhi get ₹1 lakh deposited in their account for education and empowerment. Gazette notification issued March 30, effective April 1, 2026.",
+    date: "Apr 1, 2026", source: "Delhi Govt / Business Standard", category: "govt-schemes", icon: "👧"
   },
   {
-    id: "gs2", title: "PM Internship Scheme 2.0 — 1.5 Crore Internships",
-    summary: "Expanded PM Internship Scheme now offers ₹5,000/month stipend + ₹6,000 one-time grant to graduates doing internships at top 500 companies. Open for 18–25 year olds with graduation. Apply on pminternship.mca.gov.in.",
-    date: "March 2026", source: "Ministry of Corporate Affairs", category: "govt-schemes", icon: "🎓"
+    id: "gs2", title: "Odisha Annapurna Yojana — ₹8,813 Crore for Food Security",
+    summary: "Odisha expands food net with Annapurna Yojana providing 5 kg additional rice per person monthly. Covers 3.28 crore beneficiaries, significantly expanding food security beyond NFSA. CM Majhi chairs cabinet approval.",
+    date: "Apr 5, 2026", source: "Business Standard", category: "govt-schemes", icon: "🍚"
   },
   {
-    id: "gs3", title: "Ayushman Bharat Extended to All Seniors 70+",
-    summary: "All citizens above 70 years now get ₹5 lakh/year free health insurance under Ayushman Bharat regardless of income. Over 3.2 crore Ayushman Vay Vandana cards issued.",
-    date: "Feb 2026", source: "Ministry of Health", category: "govt-schemes", icon: "🏥"
+    id: "gs3", title: "Punjab Aashirwad Scheme — Financial Assistance to Women",
+    summary: "Punjab cabinet approves scheme giving ₹2,500/month financial assistance to women aged 18–60. Launched on April 13 (Baisakhi). Applications via Punjab Seva Kendras and online portal.",
+    date: "Apr 3, 2026", source: "Tribune India", category: "govt-schemes", icon: "💳"
   },
   {
-    id: "gs4", title: "Unified Pension Scheme (UPS) Replaces NPS for Govt Employees",
-    summary: "The new UPS guarantees 50% of average basic pay as pension for central govt employees with 25+ years of service. Assured minimum ₹10,000/month pension. Effective from April 2025.",
-    date: "Jan 2026", source: "DoPT", category: "govt-schemes", icon: "👴"
+    id: "gs4", title: "Commercial LPG Prices Hiked ₹195.50 Amid West Asia War",
+    summary: "19-kg commercial LPG cylinder now costs ₹2,078.50 in Delhi after ₹195.50 hike due to rising global crude amid Iran-US war. Domestic 14.2-kg cylinder rates unchanged at ₹803 (Delhi).",
+    date: "Apr 1, 2026", source: "Indian Oil / New Indian Express", category: "govt-schemes", icon: "🔥"
   },
   {
-    id: "gs5", title: "PM Surya Ghar Muft Bijli Yojana — 1 Crore Solar Rooftops",
-    summary: "Free solar rooftop installation for households with up to 3 kW. Get 300 units free electricity/month. Subsidy of ₹78,000 for 3kW system. Apply at pmsuryaghar.gov.in.",
-    date: "Feb 2026", source: "MNRE", category: "govt-schemes", icon: "☀️"
+    id: "gs5", title: "Centre Eases Fund Release for Centrally Sponsored Schemes",
+    summary: "Govt introduces 'mother sanctions' allowing ministries to issue consolidated approvals for multiple centrally sponsored schemes at once. Speeds up fund flow to states significantly.",
+    date: "Apr 4, 2026", source: "Mint / PIB", category: "govt-schemes", icon: "💰"
   },
   {
-    id: "gs6", title: "Income Tax — No Tax Up to ₹12 Lakh (New Regime)",
-    summary: "Under the new tax regime (Budget 2025-26), salaried individuals earning up to ₹12.75 lakh pay zero income tax. Standard deduction of ₹75,000 included.",
-    date: "FY 2025-26", source: "Ministry of Finance", category: "govt-schemes", icon: "💰"
+    id: "gs6", title: "Odisha Approves ₹589 Crore Handloom Scheme (MHBY)",
+    summary: "Mukhyamantri Hastatanta Bunkar Yojana approved at ₹589 crore to boost weavers and skill development. Also cleared smartphones for 79,000 anganwadi workers for POSHAN tracking.",
+    date: "Apr 6, 2026", source: "New Indian Express", category: "govt-schemes", icon: "🧵"
   },
   {
-    id: "gs7", title: "Namo Drone Didi — Drones for Women SHGs",
-    summary: "15,000 drones distributed to women self-help groups for agricultural use — pesticide spraying, crop monitoring. Each SHG gets drone + training + ₹15,000/month income potential.",
-    date: "March 2026", source: "Ministry of Agriculture", category: "govt-schemes", icon: "🚁"
+    id: "gs7", title: "Odisha Doubles SC/ST Reservation Quota",
+    summary: "Odisha government doubles reservation for SC and ST communities in government jobs and education. Historic decision aims to address decades of social disparity in the state.",
+    date: "Apr 5, 2026", source: "Indian Express", category: "govt-schemes", icon: "⚖️"
   },
   {
-    id: "gs8", title: "NPS Vatsalya — Pension for Children",
-    summary: "Parents can now open NPS accounts for children (minors). Minimum ₹1,000/year contribution. Account converts to regular NPS at age 18. Tax benefits under Section 80CCD.",
-    date: "Jan 2026", source: "PFRDA", category: "govt-schemes", icon: "👶"
+    id: "gs8", title: "Union Budget 2026-27 — No Tax Up to ₹12.75 Lakh",
+    summary: "Budget 2026-27 continues zero income tax for salaried up to ₹12.75 lakh under new regime. Standard deduction ₹75,000. Focus on agriculture, MSME, digital economy, and green energy.",
+    date: "Feb 2026", source: "Ministry of Finance / PIB", category: "govt-schemes", icon: "💰"
   },
   {
     id: "gs9", title: "PM Vishwakarma Yojana 2.0 — Enhanced Artisan Support",
-    summary: "Expanded PM Vishwakarma scheme now covers 30 trades (up from 18). Artisans get ₹3 lakh collateral-free loan at 5% interest, digital skills training, and e-marketplace listing. Apply at pmvishwakarma.gov.in.",
-    date: "April 2026", source: "Ministry of MSME", category: "govt-schemes", icon: "🔨"
+    summary: "Expanded PM Vishwakarma scheme now covers 30 trades. Artisans get ₹3 lakh collateral-free loan at 5% interest, digital skills training, and e-marketplace listing. Apply at pmvishwakarma.gov.in.",
+    date: "Apr 2026", source: "Ministry of MSME", category: "govt-schemes", icon: "🔨"
   },
   {
-    id: "gs10", title: "One Nation One Ration Card — 100% Coverage Achieved",
-    summary: "All 81.35 crore NFSA beneficiaries can now access ration from any Fair Price Shop across India using Aadhaar-linked ration cards. Portability fully operational in all 36 states/UTs.",
-    date: "April 2026", source: "Ministry of Consumer Affairs", category: "govt-schemes", icon: "🍚"
+    id: "gs10", title: "Digital Agriculture Mission — AI for Farmers Launched",
+    summary: "New Digital Agriculture Mission provides AI-based crop advisory, satellite-monitored soil health cards, and drone-assisted precision farming. ₹2,817 crore allocation for FY2026-27.",
+    date: "Apr 2026", source: "Ministry of Agriculture", category: "govt-schemes", icon: "🌱"
   },
   {
-    id: "gs11", title: "Digital Agriculture Mission Launched — AI for Farmers",
-    summary: "New Digital Agriculture Mission provides AI-based crop advisory, satellite-monitored soil health cards, and drone-assisted precision farming. Budget allocation of ₹2,817 crore for FY2026-27.",
-    date: "April 2026", source: "Ministry of Agriculture", category: "govt-schemes", icon: "🌱"
+    id: "gs11", title: "Mudra Loan Tarun Category Limit Raised to ₹20 Lakh",
+    summary: "PM MUDRA Yojana's Tarun category increased from ₹10 lakh to ₹20 lakh. Over 47 crore loans disbursed since inception. Apply at any bank branch or Udyami Mitra portal.",
+    date: "Apr 2026", source: "Ministry of Finance", category: "govt-schemes", icon: "💼"
   },
   {
-    id: "gs12", title: "Mudra Loan Limit Raised to ₹20 Lakh Under Tarun Category",
-    summary: "PM MUDRA Yojana's Tarun category loan limit increased from ₹10 lakh to ₹20 lakh for micro-entrepreneurs. Over 47 crore loans disbursed since inception. Apply at any bank or via Udyami Mitra portal.",
-    date: "April 2026", source: "Ministry of Finance", category: "govt-schemes", icon: "💼"
+    id: "gs12", title: "PM Surya Ghar Muft Bijli Yojana — 1 Crore Solar Rooftops",
+    summary: "Free solar rooftop installation for households with up to 3 kW. Get 300 units free electricity/month. Subsidy of ₹78,000 for 3kW system. Apply at pmsuryaghar.gov.in.",
+    date: "Feb 2026", source: "MNRE", category: "govt-schemes", icon: "☀️"
   },
 ];
 
@@ -247,14 +248,16 @@ export const globalPolicyNews: NewsItem[] = [
   { id: "gp53", title: "India's GDP Grows 6.8% — Fastest Major Economy", summary: "India posts 6.8% GDP growth in FY2025-26, driven by services, manufacturing (PLI), and digital economy. IMF projects 7.1% for FY2026-27. Rupee stable at ₹84.5/USD.", date: "Mar 5, 2026", source: "MoSPI / IMF", category: "global-policy", icon: "🇮🇳" },
   { id: "gp54", title: "US-China Tech Decoupling Intensifies", summary: "US bans export of advanced AI chips (H200, B100) to China. China retaliates with rare earth export controls on gallium and germanium. Global tech supply chains disrupted.", date: "Mar 9, 2026", source: "US Commerce Dept", category: "global-policy", icon: "⚡" },
   { id: "gp55", title: "Global AI Regulation — UN Framework Adopted", summary: "195 nations adopt the UN AI Governance Framework mandating transparency, bias audits, and safety testing for AI systems. India co-chaired the drafting committee.", date: "Mar 11, 2026", source: "United Nations", category: "global-policy", icon: "🤖" },
-  { id: "gp56", title: "India's RBI Cuts Repo Rate to 6.0% — Third Cut", summary: "RBI delivers third consecutive 25bps cut, bringing repo rate to 6.0%. CPI inflation steady at 3.8%. Home loan EMIs drop further. GDP forecast upgraded to 7.2% for FY2026-27.", date: "Apr 2, 2026", source: "RBI", category: "global-policy", icon: "🇮🇳" },
-  { id: "gp57", title: "US Reciprocal Tariffs — 26% on Indian Goods", summary: "US announces 26% reciprocal tariffs on Indian exports including textiles, pharma, and auto parts. India retaliates with targeted duties on US tech and agriculture imports. Trade talks initiated.", date: "Apr 3, 2026", source: "USTR / MEA", category: "global-policy", icon: "🇺🇸" },
-  { id: "gp58", title: "China GDP Slows Further to 3.9% in Q1 2026", summary: "China's Q1 GDP growth hits 3.9% — weakest since pandemic. Property sector collapse, deflation at -0.8%, and youth unemployment at 21.3% weigh on outlook. PBoC announces emergency stimulus.", date: "Apr 5, 2026", source: "NBS China / Bloomberg", category: "global-policy", icon: "🇨🇳" },
-  { id: "gp59", title: "India Launches National Green Hydrogen Mission Phase 2", summary: "Phase 2 targets 10 MMTPA green hydrogen production by 2030. ₹19,744 crore allocated. 50+ electrolyser plants approved. India aims to become global green hydrogen hub.", date: "Apr 6, 2026", source: "MNRE", category: "global-policy", icon: "⚡" },
-  { id: "gp60", title: "Global Stock Markets Volatile Amid Trade War Fears", summary: "Dow drops 1,200 points, Sensex falls 1,800 points as US-China-EU trade tensions escalate. Gold hits $2,450/oz. Bond yields drop as investors flee to safety.", date: "Apr 7, 2026", source: "Bloomberg / Reuters", category: "global-policy", icon: "📉" },
+  { id: "gp56", title: "India's RBI Cuts Repo Rate to 6.0% — Third Consecutive Cut", summary: "RBI delivers 25bps cut, bringing repo rate to 6.0%. CPI inflation at 3.6%. Home and auto loan EMIs drop. GDP forecast upgraded to 6.7% for FY2026-27. Rupee at ₹85.5/USD.", date: "Apr 2, 2026", source: "RBI", category: "global-policy", icon: "🇮🇳" },
+  { id: "gp57", title: "Trump 'Liberation Day' — Reciprocal Tariffs on 60+ Nations", summary: "US imposes 26% tariff on India, 34% on EU, 145% on China. India negotiates interim trade deal. Raghav Chadha suggests using Starlink approval as leverage. Global trade war escalates.", date: "Apr 2, 2026", source: "USTR / Economic Times", category: "global-policy", icon: "🇺🇸" },
+  { id: "gp58", title: "US-Israel War on Iran — Strait of Hormuz Disrupted", summary: "US-Israel strikes on Iran's military and nuclear facilities escalate to full-scale conflict. Iran partially blocks Strait of Hormuz. Oil surges past $95/barrel. Global shipping routes disrupted.", date: "Mar 2026", source: "Reuters / AP", category: "global-policy", icon: "⚔️" },
+  { id: "gp59", title: "Trump Issues 8 PM Deadline to Iran — Threatens Total Destruction", summary: "Trump threatens to destroy Iran's power plants and bridges if no deal by Tuesday 8 PM ET. Iran rejects 45-day ceasefire, demands permanent peace. Markets crash globally.", date: "Apr 6, 2026", source: "Washington Post / NBC", category: "global-policy", icon: "⚠️" },
+  { id: "gp60", title: "Global Markets Crash — Nifty Falls 488 Points, Dow Plunges", summary: "Nifty drops to 22,331 (-488), Sensex crashes amid triple threat: Iran war, Trump tariffs, and China slowdown. FIIs pull out ₹12,000 crore in a week. Gold hits ₹92,000/10g.", date: "Apr 7, 2026", source: "BSE / Bloomberg", category: "global-policy", icon: "📉" },
+  { id: "gp61", title: "Commercial LPG Prices Hiked ₹195.50 — Iran War Impact", summary: "19-kg commercial LPG cylinder rises to ₹2,078.50 in Delhi. Domestic cylinder unchanged at ₹803. ATF prices also hiked across metro cities. Crude oil at $95+ impacts India's import bill.", date: "Apr 1, 2026", source: "Indian Oil / ET", category: "global-policy", icon: "🔥" },
+  { id: "gp62", title: "Trump Imposes 100% Tariff on Pharma — India's Generic Industry Hit", summary: "US slaps 100% tariff on patented pharmaceutical imports. Indian generic pharma companies face uncertainty. Govt explores WTO challenge. Drug prices may rise globally.", date: "Apr 5, 2026", source: "Hindustan Times", category: "global-policy", icon: "💊" },
 ];
 
-// --- International News (March 2025 – March 2026, weekly) ---
+// --- International News (March 2025 – April 7, 2026) ---
 export const internationalNews: NewsItem[] = [
   { id: "in01", title: "Russia Launches Massive Spring Offensive in Eastern Ukraine", summary: "Russia deploys 100K+ troops in largest offensive since 2022. Intense fighting near Pokrovsk and Chasiv Yar. EU pledges additional €5B military aid to Ukraine. India calls for diplomacy.", date: "Mar 10, 2025", source: "Reuters / BBC", category: "international", icon: "⚔️" },
   { id: "in02", title: "Haiti — UN Approves Multinational Security Mission", summary: "UN Security Council authorizes Kenya-led multinational force for Haiti. Gang violence displaces 2 million. India contributes logistics and medical support.", date: "Mar 17, 2025", source: "UN / AP", category: "international", icon: "🇭🇹" },
@@ -308,17 +311,17 @@ export const internationalNews: NewsItem[] = [
   { id: "in50", title: "Canada-India Relations Normalize After Diplomatic Standoff", summary: "After 18-month diplomatic freeze over Nijjar case, Canada and India restore full ambassador-level ties. Trade and visa processing resume normalcy.", date: "Feb 16, 2026", source: "MEA / Global News", category: "international", icon: "🇨🇦" },
   { id: "in51", title: "European Energy Crisis — Natural Gas Prices Surge Again", summary: "EU gas prices jump 35% as Russian pipeline disruptions continue. Germany accelerates LNG terminal construction. India secures 20-year LNG deal with Qatar at discounted rates.", date: "Feb 23, 2026", source: "Eurostat / Bloomberg", category: "international", icon: "⛽" },
   { id: "in52", title: "Russia-Ukraine War — Ceasefire Talks Resume", summary: "After 4 years of conflict, Turkey-mediated ceasefire talks resume in Istanbul. Both sides agree to partial prisoner exchange. EU extends sanctions package. India maintains neutral stance.", date: "Mar 2, 2026", source: "Reuters / MEA", category: "international", icon: "🕊️" },
-  { id: "in53", title: "Iran–Israel Tensions Escalate — UN Mediates", summary: "Following targeted strikes in Syria, Iran-Israel tensions hit a new high. UN Security Council convenes emergency session. India calls for diplomatic restraint. Oil prices spike to $92/barrel.", date: "Mar 5, 2026", source: "UN Security Council / Reuters", category: "international", icon: "⚠️" },
-  { id: "in54", title: "Sudan Civil War — 10 Million Displaced", summary: "Fighting between RSF and SAF forces continues. Over 10 million internally displaced — world's largest displacement crisis. AU calls for immediate ceasefire.", date: "Mar 7, 2026", source: "UNHCR", category: "international", icon: "🇸🇩" },
-  { id: "in55", title: "Gaza Conflict — Humanitarian Crisis Worsens", summary: "Over 18 months into the conflict, 2.3 million displaced in Gaza. ICJ orders expanded aid corridors. India sends $15M humanitarian relief. UN warns of famine conditions.", date: "Mar 8, 2026", source: "UNRWA / Al Jazeera", category: "international", icon: "🆘" },
-  { id: "in56", title: "AI Arms Race — US, China, EU Compete for Dominance", summary: "OpenAI launches GPT-6, Google unveils Gemini 3, China's DeepSeek-V4 matches Western models. Global AI investment exceeds $200B in 2025. Calls for international AI treaty grow.", date: "Mar 9, 2026", source: "TechCrunch / Wired", category: "international", icon: "🤖" },
-  { id: "in57", title: "Bangladesh Political Turmoil — Interim Government Faces Protests", summary: "Student-led protests demand fresh elections. Interim PM faces pressure from military and opposition parties. India monitors border situation closely. Trade disruptions reported.", date: "Mar 10, 2026", source: "Dhaka Tribune / NDTV", category: "international", icon: "🇧🇩" },
+  { id: "in53", title: "US-Israel Launch Strikes on Iran — Full-Scale War Erupts", summary: "US and Israel launch coordinated air strikes on Iranian military and nuclear facilities after months of escalation. Iran retaliates with missile barrage. Strait of Hormuz partially blocked. Oil surges past $95/barrel.", date: "Mar 15, 2026", source: "AP / Reuters", category: "international", icon: "💥" },
+  { id: "in54", title: "Iran War — Trump Issues 8 PM Tuesday Deadline to Tehran", summary: "Trump threatens to destroy Iran's power plants and bridges if no deal reached by Tuesday 8 PM ET. Iran rejects 45-day ceasefire proposal, demands permanent end to war. Global markets in turmoil.", date: "Apr 6, 2026", source: "AP / Washington Post", category: "international", icon: "⚠️" },
+  { id: "in55", title: "Iran Rejects Ceasefire — Demands Permanent Peace Deal", summary: "Tehran rejects US-proposed 45-day ceasefire, insisting on permanent end to hostilities and lifting of all sanctions. Khamenei warns of 'severe and expansive' response to infrastructure strikes.", date: "Apr 6, 2026", source: "NBC / Reuters", category: "international", icon: "🇮🇷" },
+  { id: "in56", title: "Zelenskyy Warns Long Iran War Will Hurt Ukraine Support", summary: "Ukrainian President Zelenskyy expresses concern that prolonged US-Israeli war on Iran could erode America's support for Ukraine. Kyiv braces for reduced Patriot missile deliveries.", date: "Apr 5, 2026", source: "AP / ABC News", category: "international", icon: "🇺🇦" },
+  { id: "in57", title: "Ukraine Drones Strike Russian Oil Facilities", summary: "Ukrainian drones attack Sheskharis oil terminal and multiple Russian energy facilities. Pro-Russian bloggers complain repairs will be slow and costly. Zelenskyy tours Middle East for support.", date: "Apr 6, 2026", source: "Guardian / Reuters", category: "international", icon: "🔥" },
   { id: "in58", title: "Myanmar — Devastating 7.7 Earthquake Kills Thousands", summary: "A 7.7 magnitude earthquake strikes central Myanmar, killing over 3,000 and displacing millions. Thailand also affected. India sends NDRF teams and ₹100 crore humanitarian aid.", date: "Mar 28, 2026", source: "USGS / BBC", category: "international", icon: "🌍" },
-  { id: "in59", title: "US Tariff War Escalates — Global Supply Chains Disrupted", summary: "US imposes sweeping reciprocal tariffs on 60+ nations. EU retaliates with €50B counter-tariffs. Global trade volumes drop 5%. India faces 26% tariff on exports to US.", date: "Apr 2, 2026", source: "Reuters / FT", category: "international", icon: "🌐" },
-  { id: "in60", title: "Israel-Gaza — Limited Ceasefire Agreement Reached", summary: "After 20 months, a 90-day ceasefire agreement brokered by Qatar and Egypt. Hostage exchange begins. Humanitarian aid scaled up. Reconstruction costs estimated at $80B.", date: "Apr 3, 2026", source: "Reuters / Al Jazeera", category: "international", icon: "🕊️" },
-  { id: "in61", title: "India-China Border — Patrolling Resumes at Depsang & Demchok", summary: "Indian and Chinese troops resume patrolling at Depsang Plains and Demchok after full disengagement. PM Modi and Xi hold bilateral on sidelines of SCO Summit.", date: "Apr 5, 2026", source: "MEA / ANI", category: "international", icon: "🇮🇳" },
-  { id: "in62", title: "Africa — Sahel Region Instability Spreads to West Africa", summary: "Military coups in Niger, Mali, and Burkina Faso destabilize West Africa. France withdraws last troops. Russia's Wagner Group expands influence. India evacuates nationals.", date: "Apr 6, 2026", source: "Africa Report / BBC", category: "international", icon: "🌍" },
-  { id: "in63", title: "North Korea — Kim Jong Un Meets Putin in Vladivostok", summary: "Kim-Putin summit results in expanded military cooperation. Arms-for-resources deal reported. US and South Korea condemn. UN investigates sanctions violations.", date: "Apr 7, 2026", source: "Yonhap / TASS", category: "international", icon: "🇰🇵" },
-  { id: "in58", title: "SpaceX Starship Completes First Orbital Cargo Mission", summary: "SpaceX Starship delivers 150 tons of cargo to orbit — largest payload in history. NASA selects Starship HLS for Artemis III Moon landing in late 2026. India's Gaganyaan on track.", date: "Mar 11, 2026", source: "SpaceX / NASA", category: "international", icon: "🛸" },
-  { id: "in59", title: "Global Chip War — India's First Fab Plant Operational", summary: "Tata-PSMC semiconductor fab in Gujarat starts trial production of 28nm chips. India targets 10% global chip packaging by 2030. US, Japan, EU ramp up chip subsidies.", date: "Mar 11, 2026", source: "MeitY", category: "international", icon: "💻" },
+  { id: "in59", title: "Trump 'Liberation Day' Tariffs — 26% on India, 145% on China", summary: "US imposes sweeping reciprocal tariffs: 26% on India, 34% on EU, 145% on China. Global trade war escalates. Sensex crashes 1,800 points. India negotiates interim trade deal.", date: "Apr 2, 2026", source: "Economic Times / USTR", category: "international", icon: "📊" },
+  { id: "in60", title: "Raghav Chadha vs AAP — Political Rift Deepens", summary: "AAP MP Raghav Chadha faces intense public attack from his own party. BJP steps in to defend him, triggering speculation of a political switch. Chadha suggests India use Starlink as tariff leverage.", date: "Apr 4, 2026", source: "Mathrubhumi / TOI", category: "international", icon: "🇮🇳" },
+  { id: "in61", title: "Trump Imposes 100% Tariff on Pharma Imports", summary: "US imposes 100% tariffs on patented pharmaceutical imports. Indian generic pharma industry faces significant impact. Govt explores WTO dispute resolution. Drug prices may rise globally.", date: "Apr 5, 2026", source: "Hindustan Times", category: "international", icon: "💊" },
+  { id: "in62", title: "Sudan Civil War — 10 Million Displaced, World's Largest Crisis", summary: "Fighting between RSF and SAF forces continues into second year. Over 10 million internally displaced. UN warns of genocide risk in Darfur. Humanitarian access severely limited.", date: "Mar 7, 2026", source: "UNHCR", category: "international", icon: "🇸🇩" },
+  { id: "in63", title: "Global Markets Crash — Dow Falls 2,000+ Points on Tariff Fears", summary: "Nifty drops to 22,331, Dow plunges 2,000+ points. Gold hits record $2,500/oz. Investors flee to bonds. Trade war threatens global recession. IMF warns of 1.5% global growth reduction.", date: "Apr 7, 2026", source: "Bloomberg / ET", category: "international", icon: "📉" },
+  { id: "in64", title: "India Chip Fab — Tata-PSMC Gujarat Plant Starts Trial Production", summary: "India's first semiconductor fab in Dholera, Gujarat starts trial production of 28nm chips. India targets 10% global chip packaging by 2030. ₹76,000 crore invested in semiconductor ecosystem.", date: "Mar 2026", source: "MeitY / ET", category: "international", icon: "💻" },
+  { id: "in65", title: "Strait of Hormuz Crisis — Oil Prices Spike, Global Shipping Disrupted", summary: "Iran's partial blockade of Strait of Hormuz disrupts 20% of global oil trade. India's crude oil import bill surges. Govt releases strategic petroleum reserves. LPG commercial prices hiked ₹195.", date: "Apr 3, 2026", source: "Reuters / Bloomberg", category: "international", icon: "🛢️" },
 ];

@@ -74,8 +74,8 @@ const News = () => {
             {/* Crop Prices */}
             {infoSection === "crop-prices" && (
               <div>
-                <h3 className="text-xl font-bold mb-1">Crop Prices & MSP (2025-26)</h3>
-                <p className="text-sm text-muted-foreground mb-6">Latest Minimum Support Prices and market rates for major crops across India</p>
+                <h3 className="text-xl font-bold mb-1">Crop Prices & MSP (RMS 2026-27)</h3>
+                <p className="text-sm text-muted-foreground mb-6">Latest Minimum Support Prices and market rates — updated April 2026</p>
                 <div className="grid gap-4 sm:grid-cols-2 lg:grid-cols-3">
                   {cropPrices.map((c) => (
                     <Card key={c.crop} className="hover:shadow-md transition-shadow">
@@ -228,7 +228,7 @@ const News = () => {
           {/* International News */}
           <TabsContent value="international">
             <h2 className="text-2xl font-bold mb-2">International News & Conflicts</h2>
-            <p className="text-sm text-muted-foreground mb-6">Iran-Israel, Russia-Ukraine, Gaza, Asia, Africa, space, energy & geopolitics</p>
+            <p className="text-sm text-muted-foreground mb-6">Iran-US war, Trump tariffs, Ukraine-Russia, Myanmar earthquake, global trade war & geopolitics</p>
             <div className="grid gap-4 sm:grid-cols-1 lg:grid-cols-2">
               {[...internationalNews].reverse().map((n) => (
                 <Card key={n.id} className="hover:shadow-md transition-shadow">
