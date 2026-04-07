@@ -74,8 +74,8 @@ const News = () => {
             {/* Crop Prices */}
             {infoSection === "crop-prices" && (
               <div>
-                <h3 className="text-xl font-bold mb-1">Crop Prices & MSP (2025-26)</h3>
-                <p className="text-sm text-muted-foreground mb-6">Latest Minimum Support Prices and market rates for major crops across India</p>
+                <h3 className="text-xl font-bold mb-1">Crop Prices & MSP (RMS 2026-27)</h3>
+                <p className="text-sm text-muted-foreground mb-6">Latest Minimum Support Prices and market rates — updated April 2026</p>
                 <div className="grid gap-4 sm:grid-cols-2 lg:grid-cols-3">
                   {cropPrices.map((c) => (
                     <Card key={c.crop} className="hover:shadow-md transition-shadow">
