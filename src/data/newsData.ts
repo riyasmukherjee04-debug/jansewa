@@ -109,22 +109,22 @@ export const examData: ExamInfo[] = [
   { name: "UGC NET 2026", fullName: "National Eligibility Test (Lectureship/JRF)", examDate: "Jun 2026 & Dec 2026", registrationDeadline: "Mar 2026 (Jun) / Sep 2026 (Dec)", eligibility: "Master's degree with 55% (50% OBC/SC/ST)", website: "ugcnet.nta.nic.in", icon: "🎓", category: "govt-exam" },
 ];
 
-// --- Government Job Openings (2026) ---
+// --- Government Job Openings (April 2026) ---
 export const govtJobs: GovtJobInfo[] = [
-  { title: "IAS/IPS/IFS — UPSC Civil Services 2026", organization: "Union Public Service Commission", vacancies: "~1,000 posts", lastDate: "Prelims: May 24, 2026", eligibility: "Graduate, 21–32 yrs", sector: "Administrative", icon: "🇮🇳" },
-  { title: "SSC CGL 2026 — Group B & C Posts", organization: "Staff Selection Commission", vacancies: "~17,000 posts", lastDate: "May 15, 2026", eligibility: "Graduate", sector: "Central Govt", icon: "📝" },
-  { title: "IBPS PO 2026 — Probationary Officers", organization: "IBPS", vacancies: "~4,500 posts", lastDate: "Aug 2026", eligibility: "Graduate, 20–30 yrs", sector: "Banking", icon: "🏦" },
+  { title: "UPSC Civil Services 2026 — Prelims May 24", organization: "Union Public Service Commission", vacancies: "~1,000 posts", lastDate: "Prelims: May 24, 2026", eligibility: "Graduate, 21–32 yrs", sector: "Administrative", icon: "🇮🇳" },
+  { title: "SSC CGL 2026 — Tier 1 Registration Open", organization: "Staff Selection Commission", vacancies: "~17,000 posts", lastDate: "May 15, 2026", eligibility: "Graduate", sector: "Central Govt", icon: "📝" },
+  { title: "Railway RRB ALP CEN 01/2026 — Fresh Notification", organization: "Railway Recruitment Board", vacancies: "~5,000+ posts", lastDate: "May 2026", eligibility: "ITI / Diploma / Engineering", sector: "Railways", icon: "🚂" },
+  { title: "UPSC NDA 1 2026 — Admit Card Out", organization: "UPSC", vacancies: "~400 posts", lastDate: "Exam: Apr 13, 2026", eligibility: "12th pass, 16.5–19.5 yrs, unmarried", sector: "Defence", icon: "🎖️" },
+  { title: "MPESB Nursing Officer 2026", organization: "MP Professional Examination Board", vacancies: "2,317 posts", lastDate: "Apr 30, 2026", eligibility: "B.Sc Nursing / GNM", sector: "State Govt (MP)", icon: "🏥" },
+  { title: "Punjab Police Bharti 2026", organization: "Punjab Police", vacancies: "3,297 posts", lastDate: "May 2026", eligibility: "10th/12th, age 18–28", sector: "State Police", icon: "👮" },
+  { title: "SSB Constable Tradesman 2026", organization: "Sashastra Seema Bal", vacancies: "~1,500 posts", lastDate: "Apr 25, 2026", eligibility: "10th + ITI, 18–25 yrs", sector: "Defence/Para", icon: "🛡️" },
+  { title: "IBPS PO 2026 — Notification Expected Aug", organization: "IBPS", vacancies: "~4,500 posts", lastDate: "Aug 2026 (expected)", eligibility: "Graduate, 20–30 yrs", sector: "Banking", icon: "🏦" },
   { title: "RBI Grade B Officer 2026", organization: "Reserve Bank of India", vacancies: "~300 posts", lastDate: "Jul 2026", eligibility: "Graduate 60%, 21–30 yrs", sector: "Banking", icon: "🏛️" },
-  { title: "Railway RRB NTPC 2026", organization: "Railway Recruitment Board", vacancies: "~35,000+ posts", lastDate: "Apr 2026", eligibility: "12th / Graduate", sector: "Railways", icon: "🚂" },
   { title: "Indian Army Agniveer 2026", organization: "Indian Army", vacancies: "~46,000 posts", lastDate: "Rolling", eligibility: "10th/12th, 17.5–23 yrs", sector: "Defence", icon: "🎖️" },
-  { title: "Indian Navy Agniveer SSR/MR 2026", organization: "Indian Navy", vacancies: "~3,000 posts", lastDate: "Rolling", eligibility: "12th (PCM for SSR), 17.5–23 yrs", sector: "Defence", icon: "⚓" },
-  { title: "DRDO Scientist B 2026", organization: "DRDO (via GATE)", vacancies: "~200 posts", lastDate: "May 2026", eligibility: "B.E/B.Tech + GATE score", sector: "Research & Defence", icon: "🔬" },
+  { title: "DRDO Scientist B 2026 (via GATE)", organization: "DRDO", vacancies: "~200 posts", lastDate: "May 2026", eligibility: "B.E/B.Tech + GATE score", sector: "Research & Defence", icon: "🔬" },
   { title: "ISRO Scientist/Engineer SC 2026", organization: "ISRO", vacancies: "~150 posts", lastDate: "Jun 2026", eligibility: "B.E/B.Tech, 35 yrs max", sector: "Space & Research", icon: "🚀" },
-  { title: "Teacher TET / CTET 2026", organization: "CBSE / State Boards", vacancies: "Various state quotas", lastDate: "Rolling by state", eligibility: "D.El.Ed / B.Ed + TET qualified", sector: "Education", icon: "👩‍🏫" },
+  { title: "UP Lekhpal 2026 — Results Declared", organization: "UPSSSC", vacancies: "7,994 posts", lastDate: "Results Out", eligibility: "12th + Revenue Training", sector: "State Govt (UP)", icon: "📋" },
   { title: "State PSC — Various States 2026", organization: "State Public Service Commissions", vacancies: "~50,000+ combined", lastDate: "Varies by state", eligibility: "Graduate, varies", sector: "State Govt", icon: "🏢" },
-  { title: "SEBI Grade A Officer 2026", organization: "Securities & Exchange Board", vacancies: "~100 posts", lastDate: "Jul 2026", eligibility: "Graduate/PG, 30 yrs max", sector: "Finance/Regulatory", icon: "📊" },
-  { title: "FCI Manager & AGM 2026", organization: "Food Corporation of India", vacancies: "~5,000 posts", lastDate: "May 30, 2026", eligibility: "Graduate, varies by post", sector: "Central Govt", icon: "🏢" },
-  { title: "UPSC EPFO Enforcement Officer 2026", organization: "UPSC / EPFO", vacancies: "~500 posts", lastDate: "Apr 25, 2026", eligibility: "Graduate, 21–30 yrs", sector: "Central Govt", icon: "📋" },
 ];
 
 // --- Government Schemes / Policy News (up to April 7, 2026) ---
