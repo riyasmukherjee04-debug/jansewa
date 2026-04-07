@@ -45,7 +45,7 @@ const News = () => {
       <Header />
       <main className="flex-1 container py-8">
         <h1 className="text-3xl font-bold mb-2">Latest News & Updates</h1>
-        <p className="text-muted-foreground mb-8">Crop prices, exams, govt jobs, schemes, global policies & international affairs — March 2026</p>
+        <p className="text-muted-foreground mb-8">Crop prices, exams, govt jobs, schemes, global policies & international affairs — April 2026</p>
 
         <Tabs defaultValue="info-hub" className="space-y-6">
           <TabsList className="flex flex-wrap h-auto gap-1">

@@ -54,7 +54,9 @@ export const cropPrices: CropPrice[] = [
   { crop: "Groundnut", msp: "₹6,377/qtl", marketPrice: "₹6,500–7,500/qtl", unit: "per quintal", trend: "up", icon: "🥜" },
   { crop: "Onion", msp: "—", marketPrice: "₹15–35/kg", unit: "per kg", trend: "down", icon: "🧅" },
   { crop: "Potato", msp: "—", marketPrice: "₹10–22/kg", unit: "per kg", trend: "stable", icon: "🥔" },
-  { crop: "Tomato", msp: "—", marketPrice: "₹20–55/kg", unit: "per kg", trend: "up", icon: "🍅" },
+  { crop: "Tomato", msp: "—", marketPrice: "₹25–60/kg", unit: "per kg", trend: "up", icon: "🍅" },
+  { crop: "Moong (Green Gram)", msp: "₹8,682/qtl", marketPrice: "₹8,400–9,200/qtl", unit: "per quintal", trend: "up", icon: "🫘" },
+  { crop: "Tur (Arhar)", msp: "₹7,550/qtl", marketPrice: "₹9,500–11,000/qtl", unit: "per quintal", trend: "up", icon: "🫘" },
 ];
 
 // --- Student Exams & Entrance Tests (2026) ---
@@ -122,7 +124,7 @@ export const govtJobs: GovtJobInfo[] = [
   { title: "SEBI Grade A Officer 2026", organization: "Securities & Exchange Board", vacancies: "~100 posts", lastDate: "Jul 2026", eligibility: "Graduate/PG, 30 yrs max", sector: "Finance/Regulatory", icon: "📊" },
 ];
 
-// --- Government Schemes / Policy News (March 2026) ---
+// --- Government Schemes / Policy News (up to April 2026) ---
 export const govtSchemeNews: NewsItem[] = [
   {
     id: "gs1", title: "Pink Card (Mahila Samman Card) Launched for Women",
@@ -163,6 +165,26 @@ export const govtSchemeNews: NewsItem[] = [
     id: "gs8", title: "NPS Vatsalya — Pension for Children",
     summary: "Parents can now open NPS accounts for children (minors). Minimum ₹1,000/year contribution. Account converts to regular NPS at age 18. Tax benefits under Section 80CCD.",
     date: "Jan 2026", source: "PFRDA", category: "govt-schemes", icon: "👶"
+  },
+  {
+    id: "gs9", title: "PM Vishwakarma Yojana 2.0 — Enhanced Artisan Support",
+    summary: "Expanded PM Vishwakarma scheme now covers 30 trades (up from 18). Artisans get ₹3 lakh collateral-free loan at 5% interest, digital skills training, and e-marketplace listing. Apply at pmvishwakarma.gov.in.",
+    date: "April 2026", source: "Ministry of MSME", category: "govt-schemes", icon: "🔨"
+  },
+  {
+    id: "gs10", title: "One Nation One Ration Card — 100% Coverage Achieved",
+    summary: "All 81.35 crore NFSA beneficiaries can now access ration from any Fair Price Shop across India using Aadhaar-linked ration cards. Portability fully operational in all 36 states/UTs.",
+    date: "April 2026", source: "Ministry of Consumer Affairs", category: "govt-schemes", icon: "🍚"
+  },
+  {
+    id: "gs11", title: "Digital Agriculture Mission Launched — AI for Farmers",
+    summary: "New Digital Agriculture Mission provides AI-based crop advisory, satellite-monitored soil health cards, and drone-assisted precision farming. Budget allocation of ₹2,817 crore for FY2026-27.",
+    date: "April 2026", source: "Ministry of Agriculture", category: "govt-schemes", icon: "🌱"
+  },
+  {
+    id: "gs12", title: "Mudra Loan Limit Raised to ₹20 Lakh Under Tarun Category",
+    summary: "PM MUDRA Yojana's Tarun category loan limit increased from ₹10 lakh to ₹20 lakh for micro-entrepreneurs. Over 47 crore loans disbursed since inception. Apply at any bank or via Udyami Mitra portal.",
+    date: "April 2026", source: "Ministry of Finance", category: "govt-schemes", icon: "💼"
   },
 ];
 
@@ -223,6 +245,11 @@ export const globalPolicyNews: NewsItem[] = [
   { id: "gp53", title: "India's GDP Grows 6.8% — Fastest Major Economy", summary: "India posts 6.8% GDP growth in FY2025-26, driven by services, manufacturing (PLI), and digital economy. IMF projects 7.1% for FY2026-27. Rupee stable at ₹84.5/USD.", date: "Mar 5, 2026", source: "MoSPI / IMF", category: "global-policy", icon: "🇮🇳" },
   { id: "gp54", title: "US-China Tech Decoupling Intensifies", summary: "US bans export of advanced AI chips (H200, B100) to China. China retaliates with rare earth export controls on gallium and germanium. Global tech supply chains disrupted.", date: "Mar 9, 2026", source: "US Commerce Dept", category: "global-policy", icon: "⚡" },
   { id: "gp55", title: "Global AI Regulation — UN Framework Adopted", summary: "195 nations adopt the UN AI Governance Framework mandating transparency, bias audits, and safety testing for AI systems. India co-chaired the drafting committee.", date: "Mar 11, 2026", source: "United Nations", category: "global-policy", icon: "🤖" },
+  { id: "gp56", title: "India's RBI Cuts Repo Rate to 6.0% — Third Cut", summary: "RBI delivers third consecutive 25bps cut, bringing repo rate to 6.0%. CPI inflation steady at 3.8%. Home loan EMIs drop further. GDP forecast upgraded to 7.2% for FY2026-27.", date: "Apr 2, 2026", source: "RBI", category: "global-policy", icon: "🇮🇳" },
+  { id: "gp57", title: "US Reciprocal Tariffs — 26% on Indian Goods", summary: "US announces 26% reciprocal tariffs on Indian exports including textiles, pharma, and auto parts. India retaliates with targeted duties on US tech and agriculture imports. Trade talks initiated.", date: "Apr 3, 2026", source: "USTR / MEA", category: "global-policy", icon: "🇺🇸" },
+  { id: "gp58", title: "China GDP Slows Further to 3.9% in Q1 2026", summary: "China's Q1 GDP growth hits 3.9% — weakest since pandemic. Property sector collapse, deflation at -0.8%, and youth unemployment at 21.3% weigh on outlook. PBoC announces emergency stimulus.", date: "Apr 5, 2026", source: "NBS China / Bloomberg", category: "global-policy", icon: "🇨🇳" },
+  { id: "gp59", title: "India Launches National Green Hydrogen Mission Phase 2", summary: "Phase 2 targets 10 MMTPA green hydrogen production by 2030. ₹19,744 crore allocated. 50+ electrolyser plants approved. India aims to become global green hydrogen hub.", date: "Apr 6, 2026", source: "MNRE", category: "global-policy", icon: "⚡" },
+  { id: "gp60", title: "Global Stock Markets Volatile Amid Trade War Fears", summary: "Dow drops 1,200 points, Sensex falls 1,800 points as US-China-EU trade tensions escalate. Gold hits $2,450/oz. Bond yields drop as investors flee to safety.", date: "Apr 7, 2026", source: "Bloomberg / Reuters", category: "global-policy", icon: "📉" },
 ];
 
 // --- International News (March 2025 – March 2026, weekly) ---
@@ -284,6 +311,12 @@ export const internationalNews: NewsItem[] = [
   { id: "in55", title: "Gaza Conflict — Humanitarian Crisis Worsens", summary: "Over 18 months into the conflict, 2.3 million displaced in Gaza. ICJ orders expanded aid corridors. India sends $15M humanitarian relief. UN warns of famine conditions.", date: "Mar 8, 2026", source: "UNRWA / Al Jazeera", category: "international", icon: "🆘" },
   { id: "in56", title: "AI Arms Race — US, China, EU Compete for Dominance", summary: "OpenAI launches GPT-6, Google unveils Gemini 3, China's DeepSeek-V4 matches Western models. Global AI investment exceeds $200B in 2025. Calls for international AI treaty grow.", date: "Mar 9, 2026", source: "TechCrunch / Wired", category: "international", icon: "🤖" },
   { id: "in57", title: "Bangladesh Political Turmoil — Interim Government Faces Protests", summary: "Student-led protests demand fresh elections. Interim PM faces pressure from military and opposition parties. India monitors border situation closely. Trade disruptions reported.", date: "Mar 10, 2026", source: "Dhaka Tribune / NDTV", category: "international", icon: "🇧🇩" },
+  { id: "in58", title: "Myanmar — Devastating 7.7 Earthquake Kills Thousands", summary: "A 7.7 magnitude earthquake strikes central Myanmar, killing over 3,000 and displacing millions. Thailand also affected. India sends NDRF teams and ₹100 crore humanitarian aid.", date: "Mar 28, 2026", source: "USGS / BBC", category: "international", icon: "🌍" },
+  { id: "in59", title: "US Tariff War Escalates — Global Supply Chains Disrupted", summary: "US imposes sweeping reciprocal tariffs on 60+ nations. EU retaliates with €50B counter-tariffs. Global trade volumes drop 5%. India faces 26% tariff on exports to US.", date: "Apr 2, 2026", source: "Reuters / FT", category: "international", icon: "🌐" },
+  { id: "in60", title: "Israel-Gaza — Limited Ceasefire Agreement Reached", summary: "After 20 months, a 90-day ceasefire agreement brokered by Qatar and Egypt. Hostage exchange begins. Humanitarian aid scaled up. Reconstruction costs estimated at $80B.", date: "Apr 3, 2026", source: "Reuters / Al Jazeera", category: "international", icon: "🕊️" },
+  { id: "in61", title: "India-China Border — Patrolling Resumes at Depsang & Demchok", summary: "Indian and Chinese troops resume patrolling at Depsang Plains and Demchok after full disengagement. PM Modi and Xi hold bilateral on sidelines of SCO Summit.", date: "Apr 5, 2026", source: "MEA / ANI", category: "international", icon: "🇮🇳" },
+  { id: "in62", title: "Africa — Sahel Region Instability Spreads to West Africa", summary: "Military coups in Niger, Mali, and Burkina Faso destabilize West Africa. France withdraws last troops. Russia's Wagner Group expands influence. India evacuates nationals.", date: "Apr 6, 2026", source: "Africa Report / BBC", category: "international", icon: "🌍" },
+  { id: "in63", title: "North Korea — Kim Jong Un Meets Putin in Vladivostok", summary: "Kim-Putin summit results in expanded military cooperation. Arms-for-resources deal reported. US and South Korea condemn. UN investigates sanctions violations.", date: "Apr 7, 2026", source: "Yonhap / TASS", category: "international", icon: "🇰🇵" },
   { id: "in58", title: "SpaceX Starship Completes First Orbital Cargo Mission", summary: "SpaceX Starship delivers 150 tons of cargo to orbit — largest payload in history. NASA selects Starship HLS for Artemis III Moon landing in late 2026. India's Gaganyaan on track.", date: "Mar 11, 2026", source: "SpaceX / NASA", category: "international", icon: "🛸" },
   { id: "in59", title: "Global Chip War — India's First Fab Plant Operational", summary: "Tata-PSMC semiconductor fab in Gujarat starts trial production of 28nm chips. India targets 10% global chip packaging by 2030. US, Japan, EU ramp up chip subsidies.", date: "Mar 11, 2026", source: "MeitY", category: "international", icon: "💻" },
 ];
