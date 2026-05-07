@@ -103,11 +103,11 @@ const Header = () => {
           ))}
           {user ? (
             <button onClick={() => { handleSignOut(); setMobileOpen(false); }} className="block w-full text-left px-4 py-3 rounded-lg text-sm font-medium text-destructive hover:bg-muted">
-              Sign Out
+              {t("nav.signOut")}
             </button>
           ) : (
             <Link to="/auth" onClick={() => setMobileOpen(false)} className="block px-4 py-3 rounded-lg text-sm font-medium text-primary hover:bg-muted">
-              Sign In
+              {t("nav.signIn")}
             </Link>
           )}
         </nav>

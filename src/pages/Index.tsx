@@ -1,25 +1,25 @@
-import { useState } from "react";
 import { useNavigate } from "react-router-dom";
+import { useTranslation } from "react-i18next";
 import Header from "@/components/Header";
 import Footer from "@/components/Footer";
 import ProfileForm from "@/components/ProfileForm";
 import SchemeCard from "@/components/SchemeCard";
 import BudgetHighlights from "@/components/BudgetHighlights";
 import { schemes, UserProfile } from "@/data/schemes";
-import { matchSchemes, MatchResult } from "@/lib/matchSchemes";
 import { Card, CardContent } from "@/components/ui/card";
 
 const featuredSchemes = schemes.slice(0, 6);
 
-const stats = [
-  { label: "Government Schemes", value: `${schemes.length}+`, icon: "📋" },
-  { label: "Categories Covered", value: "9", icon: "📂" },
-  { label: "Ministries", value: "15+", icon: "🏛️" },
-  { label: "Step-by-step Guides", value: `${schemes.length}+`, icon: "📝" },
-];
-
 const Index = () => {
   const navigate = useNavigate();
+  const { t } = useTranslation();
+
+  const stats = [
+    { label: t("stats.schemes"), value: `${schemes.length}+`, icon: "📋" },
+    { label: t("stats.categories"), value: "9", icon: "📂" },
+    { label: t("stats.ministries"), value: "15+", icon: "🏛️" },
+    { label: t("stats.guides"), value: `${schemes.length}+`, icon: "📝" },
+  ];
 
   const handleProfileSubmit = (profile: UserProfile) => {
     const params = new URLSearchParams({
@@ -43,17 +43,17 @@ const Index = () => {
           <div className="container">
             <div className="max-w-3xl mx-auto text-center mb-10">
               <h1 className="text-4xl md:text-5xl font-extrabold leading-tight">
-                Discover Government Schemes
-                <span className="text-primary"> Made for You</span>
+                {t("hero.title")}
+                <span className="text-primary"> {t("hero.titleAccent")}</span>
               </h1>
               <p className="mt-4 text-lg text-muted-foreground font-body">
-                Enter your details and instantly find all Indian government schemes you're eligible for — with step-by-step guides on how to apply.
+                {t("hero.subtitle")}
               </p>
             </div>
 
             <Card className="max-w-3xl mx-auto shadow-xl border-primary/20">
               <CardContent className="p-6 md:p-8">
-                <h2 className="text-lg font-bold mb-4">🔍 Find Your Eligible Schemes</h2>
+                <h2 className="text-lg font-bold mb-4">{t("hero.findCard")}</h2>
                 <ProfileForm onSubmit={handleProfileSubmit} />
               </CardContent>
             </Card>
@@ -76,7 +76,7 @@ const Index = () => {
         {/* Featured schemes */}
         <section className="py-12">
           <div className="container">
-            <h2 className="text-2xl font-bold mb-6">Popular Schemes</h2>
+            <h2 className="text-2xl font-bold mb-6">{t("sections.popular")}</h2>
             <div className="grid gap-4 sm:grid-cols-2 lg:grid-cols-3">
               {featuredSchemes.map((s) => (
                 <SchemeCard key={s.id} scheme={s} />
