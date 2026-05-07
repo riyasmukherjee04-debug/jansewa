@@ -1,0 +1,35 @@
+{
+  "nav": {
+    "home": "Home",
+    "schemes": "Find Schemes",
+    "news": "News & Updates",
+    "knowIndia": "Know India",
+    "services": "Services Guide",
+    "about": "About",
+    "signIn": "Sign In",
+    "signOut": "Sign Out",
+    "language": "Language"
+  },
+  "hero": {
+    "title": "Discover Government Schemes",
+    "titleAccent": "Made for You",
+    "subtitle": "Enter your details and instantly find all Indian government schemes you're eligible for — with step-by-step guides on how to apply.",
+    "findCard": "🔍 Find Your Eligible Schemes"
+  },
+  "stats": {
+    "schemes": "Government Schemes",
+    "categories": "Categories Covered",
+    "ministries": "Ministries",
+    "guides": "Step-by-step Guides"
+  },
+  "sections": {
+    "popular": "Popular Schemes"
+  },
+  "footer": {
+    "tagline": "Empowering citizens with information about government schemes and policies.",
+    "quickLinks": "Quick Links",
+    "disclaimer": "Disclaimer",
+    "disclaimerText": "This is an informational platform. Please verify details on official government websites before applying.",
+    "madeFor": "Made for the people of India"
+  }
+}
