@@ -1,28 +1,31 @@
 import { Link, useLocation, useNavigate } from "react-router-dom";
-import { Menu, X, LogIn, LogOut, User } from "lucide-react";
+import { Menu, X, LogIn, LogOut } from "lucide-react";
 import { useState } from "react";
+import { useTranslation } from "react-i18next";
 import { useAuth } from "@/contexts/AuthContext";
 import { Button } from "@/components/ui/button";
 import { toast } from "sonner";
-
-const navItems = [
-  { path: "/", label: "Home" },
-  { path: "/schemes", label: "Find Schemes" },
-  { path: "/news", label: "News & Updates" },
-  { path: "/know-india", label: "Know India" },
-  { path: "/citizen-services", label: "Services Guide" },
-  { path: "/about", label: "About" },
-];
+import LanguageSwitcher from "@/components/LanguageSwitcher";
 
 const Header = () => {
   const location = useLocation();
   const navigate = useNavigate();
   const [mobileOpen, setMobileOpen] = useState(false);
   const { user, signOut } = useAuth();
+  const { t } = useTranslation();
+
+  const navItems = [
+    { path: "/", label: t("nav.home") },
+    { path: "/schemes", label: t("nav.schemes") },
+    { path: "/news", label: t("nav.news") },
+    { path: "/know-india", label: t("nav.knowIndia") },
+    { path: "/citizen-services", label: t("nav.services") },
+    { path: "/about", label: t("nav.about") },
+  ];
 
   const handleSignOut = async () => {
     await signOut();
-    toast.success("Signed out");
+    toast.success(t("nav.signOut"));
     navigate("/");
   };
 
@@ -56,24 +59,30 @@ const Header = () => {
             </Link>
           ))}
           {user ? (
-            <div className="flex items-center gap-2 ml-2">
-              <span className="text-xs text-muted-foreground hidden lg:block">{user.email}</span>
+            <div className="flex items-center gap-1 ml-2">
+              <LanguageSwitcher />
               <Button variant="ghost" size="sm" onClick={handleSignOut}>
-                <LogOut className="h-4 w-4 mr-1" /> Sign Out
+                <LogOut className="h-4 w-4 mr-1" /> {t("nav.signOut")}
               </Button>
             </div>
           ) : (
-            <Link to="/auth">
-              <Button variant="outline" size="sm" className="ml-2">
-                <LogIn className="h-4 w-4 mr-1" /> Sign In
-              </Button>
-            </Link>
+            <div className="flex items-center gap-1 ml-2">
+              <LanguageSwitcher />
+              <Link to="/auth">
+                <Button variant="outline" size="sm">
+                  <LogIn className="h-4 w-4 mr-1" /> {t("nav.signIn")}
+                </Button>
+              </Link>
+            </div>
           )}
         </nav>
 
-        <button className="md:hidden p-2" onClick={() => setMobileOpen(!mobileOpen)}>
-          {mobileOpen ? <X className="h-5 w-5" /> : <Menu className="h-5 w-5" />}
-        </button>
+        <div className="md:hidden flex items-center gap-1">
+          <LanguageSwitcher compact />
+          <button className="p-2" onClick={() => setMobileOpen(!mobileOpen)}>
+            {mobileOpen ? <X className="h-5 w-5" /> : <Menu className="h-5 w-5" />}
+          </button>
+        </div>
       </div>
 
       {mobileOpen && (
