@@ -18,6 +18,7 @@ import Chatbot from "./components/Chatbot";
 import KnowIndia from "./pages/KnowIndia";
 import CitizenServices from "./pages/CitizenServices";
 import NotFound from "./pages/NotFound";
+import LanguageWelcomeDialog from "./components/LanguageWelcomeDialog";
 
 const queryClient = new QueryClient();
 
@@ -27,6 +28,7 @@ const App = () => (
       <TooltipProvider>
         <Toaster />
         <Sonner />
+        <LanguageWelcomeDialog />
         <BrowserRouter>
           <Routes>
             <Route path="/auth" element={<Auth />} />
