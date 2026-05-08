@@ -19,6 +19,7 @@ import KnowIndia from "./pages/KnowIndia";
 import CitizenServices from "./pages/CitizenServices";
 import NotFound from "./pages/NotFound";
 import LanguageWelcomeDialog from "./components/LanguageWelcomeDialog";
+import AutoTranslator from "./components/AutoTranslator";
 
 const queryClient = new QueryClient();
 
@@ -29,6 +30,7 @@ const App = () => (
         <Toaster />
         <Sonner />
         <LanguageWelcomeDialog />
+        <AutoTranslator />
         <BrowserRouter>
           <Routes>
             <Route path="/auth" element={<Auth />} />
